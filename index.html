@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Geidy Estrada | Abogados</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/logo-blue.png" rel="icon" />
+    <link href="assets/img/logo-blue.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/translate.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- CSS del Sitemap -->
+    <link href="assets/css/map.css" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    <!-- Header Section -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <!-- Logo -->
+        <a
+          href="javascript:void(0);"
+          class="logo d-flex align-items-center me-auto"
+          data-bs-toggle="modal"
+          data-bs-target="#logoModal"
+        >
+          <img
+            src="assets/img/logo-blue.png"
+            alt="Logo Ampliado"
+            style="cursor: pointer"
+          />
+          <h1 class="sitename">Geidy Estrada | Abogados</h1>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="#hero" class="active">Inicio<br /></a>
+            </li>
+            <li><a href="#about">Acerca</a></li>
+            <li><a href="#office">Oficina</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Varios</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="#" id="openModalBtn">Mapa del Sitio</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
+                <li><a href="#team">Equipo</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li>
+                  <a href="#" onclick="openEditor()">Editor de Contenido</a>
+                </li>
+                <li>
+                  <a href="#" onclick="logout()">Cerrar Sesión</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <div
+          id="google_translate_element"
+          style="
+            border: 1px solid #cccccc;
+            padding: 5px;
+            border-radius: 10px;
+            margin-left: 60px;
+          "
+        ></div>
+
+        <script type="text/javascript">
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+              {
+                pageLanguage: "es", // Idioma original de la página
+                includedLanguages: "en,es,fr,de,it,ca,ru", // Limitar los idiomas disponibles
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+              },
+              "google_translate_element"
+            );
+          }
+
+          // Cambiar el texto "Select Language"
+          document.addEventListener("DOMContentLoaded", function () {
+            const translateCombo = document.querySelector(".goog-te-combo");
+            if (translateCombo) {
+              translateCombo.setAttribute(
+                "data-placeholder",
+                "Selecciona un idioma"
+              );
+            }
+          });
+        </script>
+
+        <!-- Script de Google Translate -->
+        <script
+          type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        ></script>
+      </div>
+    </header>
+
+    <!-- Modales -->
+
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoModalLabel">
+              Geidy Estrada | Abogados
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="assets/img/logo-blue.png"
+              alt="Logo Ampliado"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Enlarged Image -->
+    <div
+      class="modal fade"
+      id="logoModal2"
+      tabindex="-1"
+      aria-labelledby="logoModalLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <h5 class="modal-title" id="logoModalLabel">
+                Digitalización Integral<br />Kit Digital | Tarragona
+              </h5>
+            </a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <a href="https://www.digitalizacionintegral.com/" target="_blank">
+              <img
+                src="assets/img/di-logo.png"
+                alt="Logo Ampliado"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para el mapa del sitio -->
+    <div id="sitemapModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Mapa del Sitio de <b>Geidy Estrada | Abogados</b></h2>
+        <ul>
+          <li>
+            <a href="#hero">
+              <h5><b>Inicio</b> <i>(Inicio de la página principal)</i></h5>
+            </a>
+          </li>
+          <li>
+            <a href="#about">
+              <h5><b>Acerca</b> <i>(Información general del despacho)</i></h5>
+            </a>
+          </li>
+          <li>
+            <a href="#office">
+              <h5>
+                <b>Oficina</b> <i>(detalles sobre la oficina del despacho)</i>
+              </h5>
+            </a>
+          </li>
+          <li>
+            <a href="#services">
+              <h5>
+                <b>Servicios</b
+                ><i> (Acceso a todos los servicios del despacho)</i>
+              </h5>
+            </a>
+            <ul>
+              <li>
+                <a href="service-details.html#extranjeria">
+                  <h6>
+                    <b>Derecho de Extranjería</b><i> (Detalles del servicio)</i>
+                  </h6>
+                </a>
+              </li>
+              <li>
+                <a href="service-details.html#familia">
+                  <h6>
+                    <b>Derecho de Familia</b><i> (Detalles del servicio)</i>
+                  </h6>
+                </a>
+              </li>
+              <li>
+                <a href="service-details.html#civil">
+                  <h6><b>Derecho Civil</b><i> (Detalles del servicio)</i></h6>
+                </a>
+              </li>
+              <li>
+                <a href="service-details.html#laboral">
+                  <h6><b>Derecho Laboral</b><i> (Detalles del servicio)</i></h6>
+                </a>
+              </li>
+              <li>
+                <a href="service-details.html#penal">
+                  <h6><b>Derecho Penal</b><i> (Detalles del servicio)</i></h6>
+                </a>
+              </li>
+              <li>
+                <a href="service-details.html#administrativo">
+                  <h6>
+                    <b>Derecho Administrativo</b><i> (Detalles del servicio)</i>
+                  </h6>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <h5><b>Varios</b><i> (Submenú con otras secciones)</i></h5>
+            </a>
+            <ul>
+              <li>
+                <a href="#testimonials">
+                  <h5>
+                    <b>Testimonios</b><i> (Testimonios de cllientes reales)</i>
+                  </h5>
+                </a>
+              </li>
+              <li>
+                <a href="#team">
+                  <h5>
+                    <b>Equipo de Trabajo</b><i> (Presentación del equipo)</i>
+                  </h5>
+                </a>
+              </li>
+              <li>
+                <a href="#faq">
+                  <h5>
+                    <b>FAQs</b><i> (Preguntas frecuentes y sus respuestas)</i>
+                  </h5>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contact">
+              <h5>
+                <b>Contacto</b><i> (Todos los datos para contactarnos)</i>
+              </h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modales para el Editor de Contenido-->
+    <!-- Modal de Autenticación -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <img
+          src="assets/img/logo-blue.png"
+          alt="Logo"
+          class="mb-3"
+          style="
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          "
+        />
+        <span
+          class="close position-absolute"
+          style="top: 10px; right: 20px"
+          onclick="closeModal('loginModal')"
+          >&times;</span
+        >
+        <h2
+          class="mb-4 text-center text-primary"
+          style="font-weight: bold; font-size: 1.8rem"
+        >
+          Iniciar Sesión para Edición
+        </h2>
+        <div class="form-group">
+          <label
+            for="username"
+            class="font-weight-bold text-primary"
+            style="font-size: 1rem; display: block"
+            ><i>USUARIO:</i></label
+          >
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            placeholder="Usuario"
+          />
+        </div>
+        <div class="form-group mb-4">
+          <br />
+          <label
+            for="password"
+            class="font-weight-bold text-primary"
+            style="font-size: 1rem; display: block"
+            ><i>CONTRASEÑA:</i></label
+          >
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Contraseña"
+          />
+        </div>
+        <button onclick="login()" class="btn btn-primary">
+          Iniciar Sesión
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de Edición -->
+    <div id="editorModal" class="modal">
+      <div class="modal-content" style="max-width: 90%">
+        <img
+          src="assets/img/logo-white.png"
+          alt="Logo"
+          class="mb-3"
+          style="
+            width: 25%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          "
+        />
+        <span
+          class="close position-absolute"
+          style="top: 10px; right: 20px"
+          onclick="closeModal('editorModal')"
+          >&times;</span
+        >
+        <h2
+          class="mb-4 text-center text-primary"
+          style="font-weight: bold; font-size: 1.8rem"
+        >
+          EDITOR DE CONTENIDO POR SECCIONES
+        </h2>
+        <h2
+          class="mb-4 text-center text-primary"
+          style="
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+          "
+        >
+          Sección INICIO
+        </h2>
+
+        <!-- Sección INICIO -->
+
+        <div class="container">
+          <!-- Agrupar 6 textarea en la misma fila -->
+          <div class="row mb-3">
+            <div class="col-md-2">
+              <h6
+                for="edit-title"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO:
+              </h6>
+              <textarea
+                id="edit-title"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-subtitle"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                SUBTÍTULO:
+              </h6>
+              <textarea
+                id="edit-subtitle"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardtitle1"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO TARJETA #<span style="font-size: 1.3em">1</span>:
+              </h6>
+              <textarea
+                id="edit-cardtitle1"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardcont1"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TEXTO TARJETA #<span style="font-size: 1.3em">1</span>:
+              </h6>
+              <textarea
+                id="edit-cardcont1"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardtitle2"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO TARJETA #<span style="font-size: 1.3em">2</span>:
+              </h6>
+              <textarea
+                id="edit-cardtitle2"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardcont2"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TEXTO TARJETA #<span style="font-size: 1.23em">2</span>:
+              </h6>
+              <textarea
+                id="edit-cardcont2"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-2">
+              <h6
+                for="edit-cardtitle3"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO TARJETA #<span style="font-size: 1.1em">3</span>:
+              </h6>
+              <textarea
+                id="edit-cardtitle3"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardcont3"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TEXTO TARJETA #<span style="font-size: 1.1em">3</span>:
+              </h6>
+              <textarea
+                id="edit-cardcont3"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardtitle4"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO TARJETA #<span style="font-size: 1.2em">4</span>:
+              </h6>
+              <textarea
+                id="edit-cardtitle4"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="col-md-2">
+              <h6
+                for="edit-cardcont4"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TEXTO TARJETA #<span style="font-size: 1.2em">4</span>:
+              </h6>
+              <textarea
+                id="edit-cardcont4"
+                class="form-control"
+                rows="4"
+              ></textarea>
+              <br />
+            </div>
+            <button
+              onclick="updateContent()"
+              class="btn btn-outline-primary btn-lg"
+              style="font-family: 'Verdana', sans-serif"
+            >
+              Guardar Cambios Sección INICIO
+            </button>
+          </div>
+          <br />
+        </div>
+        <!-- Fin de Sección INICIO -->
+
+        <!-- Sección ACERCA -->
+        <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
+        <h2
+          class="mb-4 text-center text-primary"
+          style="
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+          "
+        >
+          Sección ACERCA
+        </h2>
+
+        <div class="container">
+          <div class="row mb-3">
+            <!-- Título de la Sección -->
+            <div class="col-md-2">
+              <h6
+                for="edit-title-about"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO SECCIÓN:
+              </h6>
+              <textarea
+                id="edit-title-about"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Introducción -->
+            <div class="col-md-2">
+              <h6
+                for="edit-intro"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                INTRODUCCIÓN:
+              </h6>
+              <textarea
+                id="edit-intro"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Copromiso -->
+            <div class="col-md-2">
+              <h6
+                for="edit-compromise"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                COMPROMISO:
+              </h6>
+              <textarea
+                id="edit-compromise"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Misión -->
+            <div class="col-md-2">
+              <h6
+                for="edit-mision"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                MISIÓN:
+              </h6>
+              <textarea
+                id="edit-mision"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Visión -->
+            <div class="col-md-2">
+              <h6
+                for="edit-vision"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VISIÓN:
+              </h6>
+              <textarea
+                id="edit-vision"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Valores -->
+            <div class="col-md-2">
+              <h6
+                for="edit-values"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VALORES:
+              </h6>
+              <textarea
+                id="edit-values"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <!-- ¿Por qué Elegirnos? -->
+            <div class="col-md-4">
+              <h6
+                for="edit-why-choose-us"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                FINAL ACERCA:
+              </h6>
+              <textarea
+                id="edit-final"
+                class="form-control"
+                rows="4"
+              ></textarea>
+              <br />
+            </div>
+            <button
+              onclick="updateContent()"
+              class="btn btn-outline-primary btn-lg"
+              style="font-family: 'Verdana', sans-serif"
+            >
+              Guardar Cambios Sección ACERCA
+            </button>
+          </div>
+          <br />
+        </div>
+
+        <!-- Sección STATS -->
+        <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
+        <h2
+          class="mb-4 text-center text-primary"
+          style="
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+          "
+        >
+          Sección ESTADÍSTICAS
+        </h2>
+
+        <div class="container">
+          <div class="row mb-3">
+            <!-- Stat1 -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat1"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ESTADÍSTICA #1:
+              </h6>
+              <textarea
+                id="edit-stat1"
+                class="form-control"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <!-- Stat1n -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat1n"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VALOR ESTAD. #1:
+              </h6>
+              <textarea
+                id="edit-stat1n"
+                class="form-control"
+                rows="1"
+              ></textarea>
+              <br />
+            </div>
+
+            <!-- Stat2 -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat2"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ESTADÍSTICA #2:
+              </h6>
+              <textarea
+                id="edit-stat2"
+                class="form-control"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <!-- Stat2n -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat2n"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VALOR ESTAD. #2:
+              </h6>
+              <textarea
+                id="edit-stat2n"
+                class="form-control"
+                rows="1"
+              ></textarea>
+              <br />
+            </div>
+
+            <!-- Stat3 -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat3"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ESTADÍSTICA #3:
+              </h6>
+              <textarea
+                id="edit-stat3"
+                class="form-control"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <!-- Stat3n -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat3n"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VALOR ESTAD. #3:
+              </h6>
+              <textarea
+                id="edit-stat3n"
+                class="form-control"
+                rows="1"
+              ></textarea>
+              <br />
+            </div>
+
+            <!-- Stat4 -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat4"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ESTADÍSTICA #4:
+              </h6>
+              <textarea
+                id="edit-stat4"
+                class="form-control"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <!-- Stat4n -->
+            <div class="col-md-2">
+              <h6
+                for="edit-stat4n"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                VALOR ESTAD. #4:
+              </h6>
+              <textarea
+                id="edit-stat4n"
+                class="form-control"
+                rows="1"
+              ></textarea>
+              <br />
+            </div>
+            <button
+              onclick="updateContent()"
+              class="btn btn-outline-primary btn-lg"
+              style="font-family: 'Verdana', sans-serif"
+            >
+              Guardar Cambios Sección ESTADÍSTICAS
+            </button>
+          </div>
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <!-- Fin de Modal de Edición -->
+
+    <!-- Fin de Modales para el Editor de Contenido-->
+    <!-- Fin de Modales-->
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section">
+        <img
+          src="assets/img/hero-bg-office.jpg"
+          alt=""
+          data-aos="fade-in"
+          class=""
+        />
+
+        <div class="container">
+          <!-- Strapi container para Hero -->
+          <div id="hero-section">
+            <div class="row justify-content-center" data-aos="zoom-out">
+              <div class="col-xl-5 col-lg-7 col-md-8 col-sm-10 text-center">
+                <h1 id="hero-title"></h1>
+                <p id="hero-subtitle"></p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+            <a href="#about" class="btn-get-started">Empezar</a>
+          </div>
+          <!-- Fin Strapi Container para Hero-->
+
+          <div class="row gy-4 mt-5">
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="zoom-out"
+              data-aos-delay="100"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-people"></i></div>
+                <h4 class="title" id="hero-cardtitle1"></h4>
+                <p class="description" id="hero-cardcont1"></p>
+              </div>
+            </div>
+            <!--End Icon Box -->
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-shield-check"></i></div>
+                <h4 class="title" id="hero-cardtitle2"></h4>
+                <p class="description" id="hero-cardcont2"></p>
+              </div>
+            </div>
+            <!--End Icon Box -->
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="zoom-out"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-globe"></i></div>
+                <h4 class="title" id="hero-cardtitle3"></h4>
+                <p class="description" id="hero-cardcont3"></p>
+              </div>
+            </div>
+            <!--End Icon Box -->
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="zoom-out"
+              data-aos-delay="400"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bi bi-briefcase"></i></div>
+                <h4 class="title" id="hero-cardtitle4"></h4>
+                <p class="description" id="hero-cardcont4"></p>
+              </div>
+            </div>
+            <!--End Icon Box -->
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <!-- Agregar la imagen circular -->
+          <div class="hero-image-container">
+            <img src="assets/img/geidy1.png" alt="Abogada" class="hero-image" />
+          </div>
+          <br /><br />
+          <h2 id="about-title"></h2>
+          <p id="about-intro"></p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-6 position-relative align-self-start"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/img/logo-blue-wide.png"
+                class="img-fluid img-bordered-shadow"
+                alt=""
+              />
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <p id="about-compromise"></p>
+              <ul>
+                <li>
+                  <i class="bi bi-check2-circle"></i>
+                  <span id="about-mision"></span>
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle"></i>
+                  <span id="about-vision"></span>
+                </li>
+                <li>
+                  <i class="bi bi-check2-circle"></i>
+                  <span id="about-values"></span>
+                </li>
+              </ul>
+              <p id="about-final"></p>
+              <!--<a href="#services" class="read-more"><span>Saber Más</span><i class="bi bi-arrow-right"></i></a>-->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <!-- Stats Section -->
+      <section id="stats" class="stats section light-background">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  id="stat-stat1n"
+                  data-purecounter-start="0"
+                  data-purecounter-end=""
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p id="stat-stat1"></p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  id="stat-stat2n"
+                  data-purecounter-start="0"
+                  data-purecounter-end=""
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p id="stat-stat2"></p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  id="stat-stat3n"
+                  data-purecounter-start="0"
+                  data-purecounter-end=""
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p id="stat-stat3"></p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item text-center w-100 h-100">
+                <span
+                  id="stat-stat4n"
+                  data-purecounter-start="0"
+                  data-purecounter-end=""
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p id="stat-stat4"></p>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- About Alt Section -->
+      <section id="office" class="about-alt section">
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-6 position-relative align-self-start"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/img/oficina.jpg"
+                class="img-fluid img-bordered-shadow"
+                alt=""
+              />
+              <a
+                href="https://www.google.com/maps?q=Avenida+Principado+de+Andorra+7+Bajos,+Tarragona&output=embed"
+                class="glightbox pulsating-play-btn"
+              ></a>
+            </div>
+            <div
+              class="col-lg-6 content"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3>Localización de la Oficina</h3>
+              <p class="fst-italic">
+                Nuestro despacho se encuentra ubicado en un lugar estratégico,
+                en Avenida Principado de Andorra 7, Tarragona, lo que permite un
+                fácil acceso tanto para clientes locales como para aquellos que
+                residen en las áreas cercanas. La oficina está ubicada en una
+                zona tranquila y bien comunicada, ofreciendo un ambiente cómodo
+                y profesional para nuestros clientes.
+              </p>
+              <ul>
+                <li>
+                  <i class="bi bi-check2-all"></i>
+                  <span
+                    >En nuestra oficina, nos dedicamos a ofrecer un servicio
+                    legal personalizado y de alta calidad en diversas áreas del
+                    derecho.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check2-all"></i>
+                  <span
+                    >Cada caso es atendido con la máxima dedicación y
+                    confidencialidad, asegurándonos de que los clientes reciban
+                    la mejor asesoría y representación posible.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check2-all"></i>
+                  <span
+                    >Nuestra oficina está equipada con tecnología moderna y
+                    recursos que nos permiten gestionar los casos de manera
+                    eficiente y mantener una comunicación continua con nuestros
+                    clientes.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check2-all"></i>
+                  <span
+                    >El equipo de abogados y profesionales trabaja estrechamente
+                    con cada cliente, analizando su situación y desarrollando
+                    estrategias legales que se adaptan a sus necesidades
+                    específicas.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Alt Section -->
+
+      <!-- Testimonials Section -->
+      <section
+        id="testimonials"
+        class="testimonials section section light-background"
+      >
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Testimonios</h2>
+          <p>
+            A continuación, algunos de nuestros clientes comparten sus
+            experiencias trabajando con nosotros:
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div
+            class="swiper init-swiper"
+            data-speed="600"
+            data-delay="5000"
+            data-breakpoints='{ "320": { "slidesPerView": 1, "spaceBetween": 40 }, "1200": { "slidesPerView": 3, "spaceBetween": 40 } }'
+          >
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 40
+                  },
+                  "1200": {
+                    "slidesPerView": 3,
+                    "spaceBetween": 20
+                  }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-item" "="">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span
+                    >Gracias al despacho pude regularizar mi situación en el
+                    país. Su equipo me guió durante todo el proceso, y ahora
+                    tengo mi residencia legal. ¡Un servicio profesional y
+                    eficiente!”</span
+                  >
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img
+                  src="assets/img/testimonials/testimonials-1.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
+                <h3>Carlos Medina</h3>
+                <h4>Asesoría en Derecho de Extranjería</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span
+                    >“Fueron mi mayor apoyo durante mi proceso de divorcio. Me
+                    ayudaron a asegurar la custodia compartida de mis hijos y lo
+                    hicieron de una manera humana y comprensiva. Eternamente
+                    agradecida.”</span
+                  >
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img
+                  src="assets/img/testimonials/testimonials-2.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
+                <h3>Lucía González</h3>
+                <h4>Custodia y Divorcio</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span
+                    >“Me despidieron injustamente y gracias a este despacho pude
+                    obtener la indemnización que merecía. Siempre estuvieron a
+                    mi lado, respondiendo a mis preguntas y dándome confianza en
+                    cada paso.”</span
+                  >
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img
+                  src="assets/img/testimonials/testimonials-3.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
+                <h3>Marta Pérez</h3>
+                <h4>Asesoría en Derecho Laboral</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span
+                    >“Me acompañaron durante todo el proceso de obtención de mi
+                    nacionalidad. Siempre atentos, explicándome cada paso y
+                    manteniéndome informado. ¡No habría podido hacerlo sin su
+                    ayuda!”</span
+                  >
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img
+                  src="assets/img/testimonials/testimonials-4.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
+                <h3>Esteban Fernández</h3>
+                <h4>Trámite de Nacionalidad</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span
+                    >“Me defendieron en un caso penal complicado y no solo
+                    lograron una reducción significativa de la condena, sino que
+                    siempre me trataron con respeto y profesionalismo. ¡No
+                    podría haber estado en mejores manos!”</span
+                  >
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img
+                  src="assets/img/testimonials/testimonials-5.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
+                <h3>Roberto Martínez</h3>
+                <h4>Defensa Penal</h4>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <!-- /Testimonials Section -->
+
+      <!-- Services Section -->
+      <section id="services" class="services section white-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Servicios</h2>
+          <p>
+            A continuación una explicación más detallada de todos los servicios
+            que ofrecemos en nuestro despacho.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="service-item item-cyan position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-passport"></i>
+                </div>
+                <a
+                  href="service-details.html#extranjeria"
+                  class="stretched-link"
+                >
+                  <h3>Extranjería</h3>
+                </a>
+                <p>
+                  Tramitación de solicitudes y renovaciones de nacionalidad y
+                  residencias en España. Arraigos, reagrupaciones familiares,
+                  cartas de invitación.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="service-item item-orange position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <a href="service-details.html#familia" class="stretched-link">
+                  <h3>Familia</h3>
+                </a>
+                <p>
+                  Tramitación de divorcios contenciosos y de mutuo acuerdo,
+                  guardas y custodias, pensiones, adopciones. Parejas de hecho,
+                  matrimonios mixtos.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="service-item item-teal position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-person-check-fill"></i>
+                </div>
+                <a href="service-details.html#civil" class="stretched-link">
+                  <h3>Civil</h3>
+                </a>
+                <p>
+                  Contratos, reclamaciones por daños, herencias, disputas
+                  civiles. Resolución de conflictos entre particulares, de
+                  vecindad y convivencia.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-item item-red position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-person-fill-gear"></i>
+                </div>
+                <a href="service-details.html#laboral" class="stretched-link">
+                  <h3>Laboral</h3>
+                </a>
+                <p>
+                  Asesoramos tanto a trabajadores como a empleadores en asuntos
+                  como despidos, reclamaciones salariales, acoso laboral,
+                  indemnizaciones, contratos.
+                </p>
+                <a
+                  href="service-details.html#laboral"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="service-item item-indigo position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-person-lines-fill"></i>
+                </div>
+                <a
+                  href="service-details.html#administrativo"
+                  class="stretched-link"
+                >
+                  <h3>Administrativo</h3>
+                </a>
+                <p>
+                  Asesoramos tanto a particulares como a empresas en sus
+                  relaciones con la administración pública. Gestionamos
+                  recursos, sanciones, licencias, permisos, expropiaciones,
+                  demandas.
+                </p>
+                <a
+                  href="service-details.html#administrativo"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="service-item item-pink position-relative">
+                <div class="icon">
+                  <svg
+                    width="100"
+                    height="100"
+                    viewBox="0 0 600 600"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke="none"
+                      stroke-width="0"
+                      fill="#f5f5f5"
+                      d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"
+                    ></path>
+                  </svg>
+                  <i class="bi bi-person-fill-lock"></i>
+                </div>
+                <a href="service-details.html#penal" class="stretched-link">
+                  <h3>Penal</h3>
+                </a>
+                <p>
+                  Defendiendo a nuestros clientes en casos de delitos como robo,
+                  fraude, violencia, y otros delitos graves, durante todo el
+                  proceso penal, desde la fase de investigación y hasta el
+                  juicio oral.
+                </p>
+                <a href="service-details.html#penal" class="stretched-link"></a>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+
+      <!-- Team Section -->
+      <section id="team" class="team section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Equipo</h2>
+          <p>
+            Contamos con un equipo de abogados altamente cualificados,
+            especializados en diversas áreas del derecho, comprometidos con
+            brindar un servicio legal personalizado y eficaz. Cada miembro de
+            nuestro equipo aporta una vasta experiencia y un profundo
+            conocimiento en su campo. Nos enorgullece nuestra dedicación a la
+            justicia y nuestro enfoque humano.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="team-member">
+                <div class="member-img">
+                  <img
+                    src="assets/img/team/team-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Walter Blanco</h4>
+                  <span>Inmigración y Extranjería</span>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="team-member">
+                <div class="member-img">
+                  <img
+                    src="assets/img/team/team-2.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Sara López</h4>
+                  <span>Laboral y Social</span>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="team-member">
+                <div class="member-img">
+                  <img
+                    src="assets/img/team/team-3.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>William Sánchez</h4>
+                  <span>Penal y Administrativo</span>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="team-member">
+                <div class="member-img">
+                  <img
+                    src="assets/img/team/team-4.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Amanda García</h4>
+                  <span>Civil y Familiar</span>
+                </div>
+              </div>
+            </div>
+            <!-- End Team Member -->
+          </div>
+        </div>
+      </section>
+      <!-- /Team Section -->
+
+      <!-- Faq Section -->
+      <section id="faq" class="faq section white-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Preguntas Frecuentes</h2>
+          <p>
+            A continuación, algunas de las inquietudes más frecuentes que
+            recibimos de nuestros clientes para ayudarte a entender mejor cómo
+            podemos asistirte.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+              <div class="faq-container">
+                <div class="faq-item faq-active">
+                  <h3>
+                    1. ¿Qué trámites puedo realizar si quiero obtener la
+                    residencia en el país?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Para obtener la residencia, existen diferentes tipos de
+                      permisos dependiendo de su situación, como residencia por
+                      trabajo, reagrupación familiar o estudios. Es importante
+                      contar con asesoría legal para saber qué tipo de
+                      residencia aplica a su caso y cumplir con todos los
+                      requisitos establecidos por la normativa.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>2. ¿Qué debo hacer si mi visa está próxima a vencer?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Debe iniciar el proceso de renovación de su visa al menos
+                      con un mes de antelación a la fecha de vencimiento.
+                      Nuestro despacho puede ayudarle a gestionar la renovación
+                      para evitar sanciones o problemas legales.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>
+                    3. ¿Cómo puedo regularizar mi situación si he estado en el
+                    país de manera irregular?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Existen mecanismos legales para regularizar su situación,
+                      como los arraigos (laboral, social o familiar). Estos
+                      procesos requieren la presentación de documentos que
+                      acrediten su estancia, vínculos y circunstancias en el
+                      país.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>
+                    4. ¿Qué es una demanda civil y cuándo debo presentarla?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Una demanda civil es un proceso legal que puede
+                      presentarse cuando hay un conflicto entre dos partes
+                      relacionado con derechos y obligaciones personales o
+                      patrimoniales. Esto puede incluir reclamaciones por
+                      deudas, incumplimiento de contratos, daños o cualquier
+                      otra cuestión legal entre individuos.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    5. ¿Cómo puedo reclamar una deuda a otra persona o empresa?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      El proceso para reclamar una deuda puede comenzar con una
+                      reclamación extrajudicial, y si no se obtiene una
+                      respuesta favorable, es posible presentar una demanda
+                      judicial. Nuestros abogados pueden guiarle en cada paso
+                      del proceso para asegurarse de que sus derechos sean
+                      respetados.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    6. ¿Cuál es el plazo para presentar una demanda civil?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      El plazo para presentar una demanda civil varía
+                      dependiendo del tipo de asunto. Por ejemplo, para reclamar
+                      una deuda, el plazo suele ser de cinco años, pero este
+                      plazo puede variar según las circunstancias del caso. Es
+                      recomendable consultar con un abogado cuanto antes.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>7. ¿Qué es la custodia compartida y cómo se otorga?</h3>
+                  <div class="faq-content">
+                    <p>
+                      La custodia compartida implica que ambos progenitores
+                      compartan de manera equitativa la crianza y
+                      responsabilidades de sus hijos. Los tribunales pueden
+                      otorgarla si consideran que es en el mejor interés del
+                      menor. Se valora la relación entre los padres, la
+                      proximidad de sus domicilios y otros factores relevantes.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+
+                <div class="faq-item">
+                  <h3>8. ¿Qué se debe hacer para tramitar un divorcio?</h3>
+                  <div class="faq-content">
+                    <p>
+                      El divorcio puede ser de mutuo acuerdo o contencioso. En
+                      ambos casos, es necesario presentar una demanda ante el
+                      juzgado correspondiente. Si hay hijos menores o bienes en
+                      común, se deben regular aspectos como la custodia, el
+                      régimen de visitas y la pensión alimentaria. Nuestro
+                      despacho le asesora y representa en todo el proceso.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>
+                    9. ¿Cómo se determina la pensión alimentaria para los hijos?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      La pensión alimentaria se determina teniendo en cuenta las
+                      necesidades de los hijos y la capacidad económica de ambos
+                      padres. El tribunal evalúa los ingresos y gastos de cada
+                      parte para fijar una cantidad justa y razonable.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>
+                    10. ¿Qué puedo hacer si he sido despedido injustamente?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Si considera que ha sido despedido de manera
+                      injustificada, tiene derecho a impugnar el despido ante el
+                      tribunal. Dependiendo de su caso, podría solicitar la
+                      readmisión o una indemnización por despido improcedente.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>11. ¿Cuáles son mis derechos si sufro acoso laboral?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Si está siendo víctima de acoso laboral (mobbing), tiene
+                      derecho a presentar una denuncia. El acoso laboral es un
+                      delito y debe ser detenido. Puede recibir asesoramiento
+                      legal para iniciar acciones contra el acosador y obtener
+                      compensación.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>
+                    12. ¿Cómo se calculan las indemnizaciones por despido?
+                  </h3>
+                  <div class="faq-content">
+                    <p>
+                      Las indemnizaciones por despido se calculan en función de
+                      varios factores, como la antigüedad en la empresa, el
+                      salario y el tipo de despido (disciplinario, objetivo,
+                      improcedente). Cada caso es diferente y debe ser evaluado
+                      por un abogado para asegurar un cálculo justo.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>13. ¿Qué debo hacer si he sido detenido?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Si ha sido detenido, tiene derecho a un abogado que le
+                      asista durante todo el proceso. Es fundamental no declarar
+                      sin la presencia de su abogado para garantizar que sus
+                      derechos sean respetados.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>14. ¿Qué delitos pueden conllevar penas de prisión?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Algunos de los delitos que conllevan penas de prisión
+                      incluyen robo, agresión, tráfico de drogas, homicidio,
+                      entre otros. Cada delito tiene sanciones diferentes según
+                      la gravedad y las circunstancias del caso. Nuestros
+                      abogados penalistas pueden ofrecerle la mejor defensa
+                      posible.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+
+                <div class="faq-item">
+                  <h3>15. ¿Qué puedo hacer si soy víctima de un delito?</h3>
+                  <div class="faq-content">
+                    <p>
+                      Si ha sido víctima de un delito, debe denunciarlo ante las
+                      autoridades lo antes posible. Además, tiene derecho a
+                      recibir asesoramiento legal para solicitar medidas de
+                      protección o compensación por los daños sufridos.
+                    </p>
+                  </div>
+                  <i class="faq-toggle bi bi-chevron-right"></i>
+                </div>
+                <!-- End Faq item-->
+              </div>
+            </div>
+            <!-- End Faq Column-->
+          </div>
+        </div>
+      </section>
+      <!-- /Faq Section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section section light-background">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>CONTACTO</h2>
+          <p>
+            Si tienes alguna pregunta, necesitas asesoría legal o deseas
+            concertar una cita, no dudes en ponerte en contacto con nosotros.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+            <iframe
+              style="border: 0; width: 100%; height: 270px"
+              src="https://www.google.com/maps?q=Avenida+Principado+de+Andorra+7+Bajos,+Tarragona&output=embed"
+              frameborder="0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <!-- End Google Maps -->
+
+          <div class="row gy-4">
+            <div class="col-lg-4">
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Visítenos:</h3>
+                  <p>
+                    Avenida Principado de Andorra 7 (Bajos), Tarragona,
+                    Barcelona
+                  </p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Llámenos:</h3>
+                  <p>+34 877 078 345</p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h3>Comuníquenos:</h3>
+                  <p>
+                    <a
+                      href="https://web.whatsapp.com/send/?phone=34657490138&text=%C2%A1Hola%21+ABOGADA+Geidy,+Me+gustar%C3%ADa+saber+m%C3%A1s+sobre+sus+servicios+...+&type=phone_number&app_absent=0"
+                      target="_blank"
+                      >+34 657 490 138</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Escríbanos:</h3>
+                  <p>geidyestrada@gmail.com</p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+
+              <div
+                class="info-item d-flex"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <i class="bi bi-qr-code flex-shrink-0"></i>
+                <div>
+                  <p>
+                    <img src="assets/img/QR.png" width="60%" heigth="äuto" />
+                  </p>
+                </div>
+              </div>
+              <!-- End Info Item -->
+            </div>
+
+            <div class="col-lg-8">
+              <form
+                action="https://formspree.io/f/manwgaqn"
+                method="POST"
+                method="post"
+                class="php-email-form"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <input type="hidden" name="_next" value="#hero" />
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="Nombre"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Email"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      placeholder="Asunto"
+                      required=""
+                    />
+                  </div>
+
+                  <div class="col-md-12">
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="12"
+                      placeholder="Mensaje"
+                      required=""
+                    ></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center">
+                    <div class="loading">Cargando ...</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">
+                      Su mensaje ha sido enviado. Gracias!
+                    </div>
+
+                    <button type="submit">Enviar Mensaje</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <footer id="footer" class="footer white-background">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Geidy Estrada | Abogados</span>
+            </a>
+            <p>Contactos de Redes Sociales:</p>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href="https://es-la.facebook.com/geidyestrada/" target="_blank"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a
+                href="https://es.linkedin.com/in/geidy-estrada-valero-838597101"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Vínculos Útiles</h4>
+            <ul>
+              <li><a href="#hero">Inicio</a></li>
+              <li><a href="#about">Acerca</a></li>
+              <li><a href="#office">Oficina</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#testimonials">Testimonios</a></li>
+              <li><a href="#team">Equipo</a></li>
+              <li><a href="#faq">Faqs</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Nuestros Servicios</h4>
+            <ul>
+              <li>
+                <a href="service-details.html#extranjeria">Extranjería</a>
+              </li>
+              <li><a href="service-details.html#familia">Famiia</a></li>
+              <li><a href="service-details.html#civil">Civil</a></li>
+              <li><a href="service-details.html#laboral">Laboral</a></li>
+              <li><a href="service-details.html#penal">Penal</a></li>
+              <li>
+                <a href="service-details.html#administrativo">Administrativo</a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-12 footer-contact text-center text-md-start"
+          >
+            <h4>Contáctenos</h4>
+            <p>Avenida Principado de Andorra 7 (Bajos)</p>
+            <p>Tarragona, Barcelona</p>
+            <p>España</p>
+            <p class="mt-4">
+              <strong>Teléfono:</strong> <span>+34 657 490 138</span>
+            </p>
+            <p><strong>Email:</strong> <span>geidyestrada@gmail.com</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>2024 Copyright</span>
+          <strong class="px-1 sitename">Geidy Estrada | Abogados</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Diseñado por
+          <a href="https://www.digitalizacionintegral.com/" target="_blank"
+            ><strong>Digitalización Integral</strong></a
+          >
+        </div>
+        <br />
+        <!-- Logo -->
+        <div class="d-flex justify-content-center align-items-center">
+          <a
+            href="javascript:void(0);"
+            class="logo"
+            data-bs-toggle="modal"
+            data-bs-target="#logoModal2"
+          >
+            <img
+              src="assets/img/di-logo.png"
+              class="img-fluid"
+              alt="Logo Ampliado"
+              style="cursor: pointer"
+              width="20%"
+              height="auto"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Mapsite y Otros Modales-->
+    <script src="assets/js/map.js"></script>
+
+    <!-- Strapi -->
+    <script src="assets/js/strapi.js"></script>
+
+    <style>
+      .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        /*background-color: #25d366;*/
+        background-color: #2487ce;
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 24px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      /* Estilo al pasar el mouse */
+      .whatsapp-button:hover {
+        background-color: #25d366;
+        /* Cambia el color de fondo */
+        color: white;
+        /* Mantén el color blanco del ícono al hacer hover */
+      }
+    </style>
+
+    <a
+      href="#"
+      onclick="window.open('https://web.whatsapp.com/send/?phone=34657490138&text=%C2%A1Hola%21+ABOGADA+Geidy,+Me+gustar%C3%ADa+saber+m%C3%A1s+sobre+sus+servicios+...+&type=phone_number&app_absent=0', '_blank', 'width=1024,height=768'); return false;"
+      class="whatsapp-button"
+    >
+      <i class="bi bi-whatsapp" style="padding: 5px"></i>
+    </a>
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+  </body>
+</html>

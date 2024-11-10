@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa del Sitio</title>
+    <!-- Enlace local a Bootstrap CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Sitio de la Abogada</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca</a></li>
+          <li><a href="oficina.html">Oficina</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#sitemapModal"
+              >Mapa del Sitio</a
+            >
+          </li>
+          <!-- Enlace para abrir el modal -->
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Modal con Bootstrap -->
+    <div
+      class="modal fade"
+      id="sitemapModal"
+      tabindex="-1"
+      aria-labelledby="sitemapModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sitemapModalLabel">Mapa del Sitio</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="acerca.html">Acerca</a></li>
+              <li><a href="oficina.html">Oficina</a></li>
+              <li>
+                <a href="servicios.html">Servicios</a>
+                <ul>
+                  <li>
+                    <a href="service-details.html?service=extranjeria"
+                      >Derecho de Extranjería</a
+                    >
+                  </li>
+                  <li>
+                    <a href="service-details.html?service=civil"
+                      >Derecho Civil</a
+                    >
+                  </li>
+                  <li>
+                    <a href="service-details.html?service=familia"
+                      >Derecho de Familia</a
+                    >
+                  </li>
+                  <li>
+                    <a href="service-details.html?service=laboral"
+                      >Derecho Laboral</a
+                    >
+                  </li>
+                  <li>
+                    <a href="service-details.html?service=penal"
+                      >Derecho Penal</a
+                    >
+                  </li>
+                  <li>
+                    <a href="service-details.html?service=administrativo"
+                      >Derecho Administrativo</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2024 Nombre de la Abogada. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace local a Bootstrap JS -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
