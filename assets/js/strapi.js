@@ -5,7 +5,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLhero = "http://localhost:1337/api/hero";
+const apiURLhero = "https://strapi-ge-production.up.railway.app/api/hero";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL HERO ///////////////////////////////////////////////////////////////////////
 /**
@@ -47,7 +47,7 @@ async function fetchHeroContent() {
     //console.log("Datos de Background:", heroData.Background); // Verificar el campo Background
     // Establece la imagen de fondo desde Strapi si existe
     /*if (heroData.Background && heroData.Background.url) {
-      const backgroundUrl = `http://localhost:1337${heroData.Background.url}`;
+      const backgroundUrl = `https://strapi-ge-production.up.railway.app${heroData.Background.url}`;
       //console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
       (document.getElementById(
         "hero-background"
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
  */
 async function loadContent() {
   try {
-    const response = await fetch("http://localhost:1337/api/hero");
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -135,7 +135,7 @@ async function updateContent() {
   const newCardCont4 = document.getElementById("edit-cardcont4").value;
 
   try {
-    const response = await fetch("http://localhost:1337/api/hero", {
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -172,7 +172,7 @@ async function updateContent() {
 
 // <!-- Funciones para trabajar con el About desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLabout = "http://localhost:1337/api/about";
+const apiURLabout = "https://strapi-ge-production.up.railway.app/api/about";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL ABOUT /////////////////////////////////////////////////////////////////////
 /**
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", fetchAboutContent);
 async function loadAboutContent() {
   //console.log("Iniciando carga del About...");
   try {
-    const response = await fetch("http://localhost:1337/api/about");
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del About: " + response.status
@@ -289,7 +289,7 @@ async function updateAboutContent() {
   const newFinal = document.getElementById("edit-final").value;
 
   try {
-    const response = await fetch("http://localhost:1337/api/about", {
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -323,7 +323,7 @@ async function updateAboutContent() {
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLstat = "http://localhost:1337/api/stat";
+const apiURLstat = "https://strapi-ge-production.up.railway.app/api/stat";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL STAT ///////////////////////////////////////////////////////////////////////
 /**
@@ -422,7 +422,7 @@ document.addEventListener("DOMContentLoaded", fetchStatContent);
  */
 async function loadStatContent() {
   try {
-    const response = await fetch("http://localhost:1337/api/stat");
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -526,7 +526,7 @@ async function updateStatContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("http://localhost:1337/api/stat", {
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -598,7 +598,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("http://localhost:1337/api/auth/local", {
+    const response = await fetch("https://strapi-ge-production.up.railway.app/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
