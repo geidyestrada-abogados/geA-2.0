@@ -1,0 +1,49 @@
+.skiptranslate iframe {
+    visibility: hidden !important;
+}
+body {
+    top: 0 !important;
+}
+
+
+/* Ocultar el banner superior de Google Translate */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+/* Asegurar que el sitio no se desplace hacia abajo después de ocultar el banner */
+body {
+    top: 0px !important;
+}
+
+/* Ocultar el logotipo de Google */
+.goog-logo-frame {
+    display: none !important;
+}
+
+/* Personalizar el selector de idiomas */
+#google_translate_element {
+    background-color: #f8f9fa; /* Fondo del selector */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    font-family: Arial, sans-serif;
+    display: inline-block; /* Evitar que ocupe toda la línea */
+}
+
+/* Estilo de los elementos dentro del selector */
+.goog-te-combo {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    #google_translate_element {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
