@@ -840,7 +840,7 @@
               <br />
             </div>
             <button
-              onclick="updateContent()"
+              onclick="updateAboutContent()"
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
@@ -1044,6 +1044,162 @@
               style="font-family: 'Verdana', sans-serif"
             >
               Guardar Cambios Sección ESTADÍSTICAS
+            </button>
+          </div>
+          <br />
+        </div>
+
+        <!-- Sección OFFICE -->
+        <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
+        <h2
+          class="mb-4 text-center text-primary"
+          style="
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+          "
+        >
+          Sección OFICINA
+        </h2>
+
+        <div class="container">
+          <div class="row mb-3">
+            <!-- Título de la Sección -->
+            <div class="col-md-2">
+              <h6
+                for="edit-title-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                TÍTULO SECCIÓN:
+              </h6>
+              <textarea
+                id="edit-title-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Introducción -->
+            <div class="col-md-2">
+              <h6
+                for="edit-intro-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                INTRODUCCIÓN:
+              </h6>
+              <textarea
+                id="edit-intro-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Copromiso -->
+            <div class="col-md-2">
+              <h6
+                for="edit-item1-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ARTÍCULO #1:
+              </h6>
+              <textarea
+                id="edit-item1-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Misión -->
+            <div class="col-md-2">
+              <h6
+                for="edit-item2-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ARTÍCULO #2:
+              </h6>
+              <textarea
+                id="edit-item2-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Visión -->
+            <div class="col-md-2">
+              <h6
+                for="edit-item3-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ARTÍCULO #3:
+              </h6>
+              <textarea
+                id="edit-item3-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <!-- Valores -->
+            <div class="col-md-2">
+              <h6
+                for="edit-item4-office"
+                class="text-dark"
+                style="
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                ARTÍCULO #4:
+              </h6>
+              <textarea
+                id="edit-item4-office"
+                class="form-control"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <button
+              onclick="updateOfficeContent()"
+              class="btn btn-outline-primary btn-lg"
+              style="font-family: 'Verdana', sans-serif"
+            >
+              Guardar Cambios Sección OFFICE
             </button>
           </div>
           <br />
@@ -1254,7 +1410,7 @@
       </section>
       <!-- /Stats Section -->
 
-      <!-- About Alt Section -->
+      <!-- Office Alt Section -->
       <section id="office" class="about-alt section">
         <div class="container">
           <div class="row gy-4">
@@ -1278,49 +1434,24 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3>Localización de la Oficina</h3>
-              <p class="fst-italic">
-                Nuestro despacho se encuentra ubicado en un lugar estratégico,
-                en Avenida Principado de Andorra 7, Tarragona, lo que permite un
-                fácil acceso tanto para clientes locales como para aquellos que
-                residen en las áreas cercanas. La oficina está ubicada en una
-                zona tranquila y bien comunicada, ofreciendo un ambiente cómodo
-                y profesional para nuestros clientes.
-              </p>
+              <h3 id="title-office"></h3>
+              <p id="intro-office" class="fst-italic"></p>
               <ul>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span
-                    >En nuestra oficina, nos dedicamos a ofrecer un servicio
-                    legal personalizado y de alta calidad en diversas áreas del
-                    derecho.</span
-                  >
+                  <span id="item1-office"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span
-                    >Cada caso es atendido con la máxima dedicación y
-                    confidencialidad, asegurándonos de que los clientes reciban
-                    la mejor asesoría y representación posible.</span
-                  >
+                  <span id="item2-office"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span
-                    >Nuestra oficina está equipada con tecnología moderna y
-                    recursos que nos permiten gestionar los casos de manera
-                    eficiente y mantener una comunicación continua con nuestros
-                    clientes.</span
-                  >
+                  <span id="item3-office"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span
-                    >El equipo de abogados y profesionales trabaja estrechamente
-                    con cada cliente, analizando su situación y desarrollando
-                    estrategias legales que se adaptan a sus necesidades
-                    específicas.</span
-                  >
+                  <span id="item4-office"></span>
                 </li>
               </ul>
             </div>
