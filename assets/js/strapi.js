@@ -5,7 +5,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLhero = "https://strapi-ge-production.up.railway.app/api/hero";
+const apiURLhero = "http://localhost:1337/api/hero";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL HERO ///////////////////////////////////////////////////////////////////////
 /**
@@ -47,7 +47,7 @@ async function fetchHeroContent() {
     //console.log("Datos de Background:", heroData.Background); // Verificar el campo Background
     // Establece la imagen de fondo desde Strapi si existe
     /*if (heroData.Background && heroData.Background.url) {
-      const backgroundUrl = `https://strapi-ge-production.up.railway.app${heroData.Background.url}`;
+      const backgroundUrl = `http://localhost:1337${heroData.Background.url}`;
       //console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
       (document.getElementById(
         "hero-background"
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
  */
 async function loadContent() {
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero");
+    const response = await fetch("http://localhost:1337/api/hero");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -135,7 +135,7 @@ async function updateContent() {
   const newCardCont4 = document.getElementById("edit-cardcont4").value;
 
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero", {
+    const response = await fetch("http://localhost:1337/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -158,10 +158,10 @@ async function updateContent() {
     });
 
     if (response.ok) {
-      alert("Contenido actualizado con éxito");
+      alert("Contenido actualizado con éxito.");
       window.location.reload(); // Recargar la página después de guardar cambios
     } else {
-      alert("Error al actualizar el contenido");
+      alert("Error al actualizar el contenido.");
     }
   } catch (error) {
     console.error("Error al actualizar el contenido:", error);
@@ -172,7 +172,7 @@ async function updateContent() {
 
 // <!-- Funciones para trabajar con el About desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLabout = "https://strapi-ge-production.up.railway.app/api/about";
+const apiURLabout = "http://localhost:1337/api/about";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL ABOUT /////////////////////////////////////////////////////////////////////
 /**
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", fetchAboutContent);
 async function loadAboutContent() {
   //console.log("Iniciando carga del About...");
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about");
+    const response = await fetch("http://localhost:1337/api/about");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del About: " + response.status
@@ -289,7 +289,7 @@ async function updateAboutContent() {
   const newFinal = document.getElementById("edit-final").value;
 
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about", {
+    const response = await fetch("http://localhost:1337/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -309,10 +309,10 @@ async function updateAboutContent() {
     });
 
     if (response.ok) {
-      alert("Contenido actualizado con éxito");
+      alert("Contenido actualizado con éxito.");
       window.location.reload(); // Recargar la página después de guardar cambios
     } else {
-      alert("Error al actualizar el contenido");
+      alert("Error al actualizar el contenido.");
     }
   } catch (error) {
     console.error("Error al actualizar el contenido:", error);
@@ -323,7 +323,7 @@ async function updateAboutContent() {
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLstat = "https://strapi-ge-production.up.railway.app/api/stat";
+const apiURLstat = "http://localhost:1337/api/stat";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL STAT ///////////////////////////////////////////////////////////////////////
 /**
@@ -422,7 +422,7 @@ document.addEventListener("DOMContentLoaded", fetchStatContent);
  */
 async function loadStatContent() {
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat");
+    const response = await fetch("http://localhost:1337/api/stat");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -526,7 +526,7 @@ async function updateStatContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat", {
+    const response = await fetch("http://localhost:1337/api/stat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -538,7 +538,7 @@ async function updateStatContent() {
     console.log("Respuesta del servidor:", response);
 
     if (response.ok) {
-      alert("Contenido actualizado con éxito");
+      alert("Contenido actualizado con éxito.");
       // Recargar la página para ver los cambios reflejados
       window.location.reload();
     } else {
@@ -598,7 +598,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/auth/local", {
+    const response = await fetch("http://localhost:1337/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
@@ -616,16 +616,20 @@ async function login() {
     const data = await response.json();
     if (data.jwt) {
       localStorage.setItem("token", data.jwt); // Guardar el token
-      alert("Autenticación Exitosa");
+      alert("Autenticación Exitosa.");
       closeModal("loginModal");
-      await loadContent();
-      openModal("editorModal");
+      document.getElementById("loginStatus").innerText = "Bienvenido!"; // Cambia el texto a "Bienvenido"
+      loginStatus.style.color = "#0095ff"; // Cambia el color del texto a azul
+      //await loadContent();
+      //openModal("editorModal");
     } else {
-      alert("Error de Autenticación");
+      alert("Error de Autenticación.");
     }
   } catch (error) {
     console.error("Error de autenticación:", error);
-    alert("Ocurrió un problema durante la Autenticación.");
+    alert(
+      "Error de Autenticación. Nombre de usuario o Contraseña incorrectos ."
+    );
   }
 }
 
@@ -656,6 +660,20 @@ async function openEditor() {
       //console.error("Error cargando contenidos:", error);
     }
   } else {
+    //openModal("loginModal");
+    alert("Debe Iniciar Sesión para la Edición de Contenido.");
+  }
+}
+
+// FUNCIÓN PARA: ///////////////// ABRIR Sesión Inicial /////////////////////
+async function loginFirst() {
+  if (localStorage.getItem("token")) {
+    try {
+      alert("Ya se encuentra Autenticado.");
+    } catch (error) {
+      //console.error("Error cargando contenidos:", error);
+    }
+  } else {
     openModal("loginModal");
   }
 }
@@ -672,11 +690,12 @@ function logout() {
   if (localStorage.getItem("token")) {
     // Eliminar el token del localStorage
     localStorage.removeItem("token");
-    alert("Sesión cerrada con éxito");
+    alert("Sesión cerrada con éxito.");
     // Redirigir al usuario a la página de inicio de sesión o página principal
     window.location.href = "index.html";
   } else {
-    alert("No es necesario cerrar la sesión, no hay ninguna sesión activa");
+    alert("No es necesario cerrar la sesión, no hay ninguna sesión activa.");
   }
 }
+
 // <!-- FIN de Script para manejo de autenticación, edición y cierre de sesión -->
