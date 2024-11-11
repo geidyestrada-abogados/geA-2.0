@@ -317,7 +317,7 @@ async function updateAboutContent() {
   } catch (error) {
     console.error("Error al actualizar el contenido:", error);
   }
-} // FIN de la Función para ACTUALIZAR el contenido del ABOUT en la BD de Strapi
+} // FIN de la Función para ACTUALIZAR el contenido del STATS en la BD de Strapi
 
 //////////////////////////////////////////////////////////////////////////////// STATS ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -557,6 +557,156 @@ async function updateStatContent() {
 }
 // FIN de Función para ACTUALIZAR contenido del Stat en la BD de Strapi
 
+//////////////////////////////////////////////////////////////////////////////// OFFICE ////////////////////////////////////////////////////////////////////////////////////////
+
+// <!-- Funciones para trabajar con el Office desde la API de Strapi-->
+// URL de la API de Strapi
+const apiURLoffice = "http://localhost:1337/api/office";
+
+// FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL OFFICE /////////////////////////////////////////////////////////////////////
+/**
+ * fetchOfficeContent
+ * Obtiene el contenido de la seccion Office desde la API de Strapi y lo muestra en el sitio web.
+ * - Realiza una solicitud HTTP GET a la API.
+ * - Parsea la respuesta y actualiza el contenido de la seccion Office.
+ * - Asigna valores a los elementos HTML correspondientes.
+ */
+async function fetchOfficeContent() {
+  try {
+    const response = await fetch(apiURLoffice + "?populate=*");
+    const data = await response.json();
+
+    // Verifica la estructura exacta de los datos
+    //console.log("Datos completos de Office:", data);
+
+    if (data && data.data) {
+      const officeData = data.data;
+
+      // Asegúrate de que los `id` en HTML coincidan
+      document.getElementById("title-office").textContent =
+        officeData.Title || "";
+      document.getElementById("intro-office").textContent =
+        officeData.Intro || "";
+      document.getElementById("item1-office").textContent =
+        officeData.Item1 || "";
+      document.getElementById("item2-office").textContent =
+        officeData.Item2 || "";
+      document.getElementById("item3-office").textContent =
+        officeData.Item3 || "";
+      document.getElementById("item4-office").textContent =
+        officeData.Item4 || "";
+    } else {
+      console.error("Estructura de datos no esperada en Office.");
+    }
+  } catch (error) {
+    console.error("Error al obtener el contenido de Office:", error);
+  }
+} // FIN de Función para OBTENER y MOSTRAR los datos del Office
+
+// Llama a la función al cargar la página
+document.addEventListener("DOMContentLoaded", fetchOfficeContent);
+
+// FUNCIÓN PARA: ////////////////////////// //////////////////////////////////// (2) CARGAR CONTENIDO DEL OFFICE PARA EDICIÓN //////////////////////////////////////////////////////////////
+/**
+ * loadOfficeContent
+ * Carga el contenido de Office desde la API de Strapi y lo muestra en el editor.
+ * - Solicita el contenido de Office para edición.
+ * - Asigna los valores a los campos del formulario de edición.
+ */
+async function loadOfficeContent() {
+  //console.log("Iniciando carga del Office ...");
+  try {
+    const response = await fetch("http://localhost:1337/api/office");
+    if (!response.ok) {
+      throw new Error(
+        "Error al obtener el contenido del Office: " + response.status
+      );
+    }
+    const data = await response.json();
+    //console.log("Datos del Office recibidos:", data); // Verificar datos recibidos
+
+    if (data && data.data) {
+      const officeData = data.data;
+
+      // Verificar cada propiedad en la consola antes de asignar
+      /*console.log("Title:", officeData.Title);
+            console.log("Intro:", officeData.Intro);
+            console.log("Item1:", officeData.Item1);
+            console.log("Item2:", officeData.Item2);
+            console.log("Item3:", officeData.Item4);
+            console.log("Item4:", officeData.Item5); */
+
+      document.getElementById("edit-title-office").value =
+        officeData.Title || "";
+      document.getElementById("edit-intro-office").value =
+        officeData.Intro || "";
+      document.getElementById("edit-item1-office").value =
+        officeData.Item1 || "";
+      document.getElementById("edit-item2-office").value =
+        officeData.Item2 || "";
+      document.getElementById("edit-item3-office").value =
+        officeData.Item3 || "";
+      document.getElementById("edit-item4-office").value =
+        officeData.Item4 || "";
+    } else {
+      console.error("Estructura de datos no esperada. Datos completos:", data);
+      alert(
+        "La estructura de los datos no es la esperada. Revisa la consola para más detalles."
+      );
+    }
+  } catch (error) {
+    console.error("Error al cargar el contenido del Office:", error);
+    alert("No se pudo cargar el contenido. Por favor, intenta de nuevo.");
+  }
+} // FIN de Función para CARGAR CONTENIDO del OFFICE para Edición
+
+// FUNCIÓN PARA: ////////////////////////// //////////////////////////// (3) ACTUALIZAR EL CONTENIDO DEL OFFICE EN LA BD de Strapi //////////////////////////////////////////////////////////////
+/**
+/**
+ * updateOfficeContent
+ * Actualiza el contenido del Office en la API de Strapi.
+ * - Envía una solicitud HTTP PUT con los nuevos datos.
+ * - Requiere un token JWT almacenado en localStorage.
+ */
+async function updateOfficeContent() {
+  const token = localStorage.getItem("token");
+  const newTitle = document.getElementById("edit-title-office").value;
+  const newIntro = document.getElementById("edit-intro-office").value;
+  const newItem1 = document.getElementById("edit-item1-office").value;
+  const newItem2 = document.getElementById("edit-item2-office").value;
+  const newItem3 = document.getElementById("edit-item3-office").value;
+  const newItem4 = document.getElementById("edit-item4-office").value;
+
+  try {
+    const response = await fetch("http://localhost:1337/api/office", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        data: {
+          Title: newTitle,
+          Intro: newIntro,
+          Item1: newItem1,
+          Item2: newItem2,
+          Item3: newItem3,
+          Item4: newItem4,
+        },
+      }),
+    });
+
+    if (response.ok) {
+      alert("Contenido actualizado con éxito.");
+      window.location.reload(); // Recargar la página después de guardar cambios
+    } else {
+      alert("Error al actualizar el contenido.");
+    }
+  } catch (error) {
+    console.error("Error al actualizar el contenido:", error);
+  }
+} // FIN de la Función para ACTUALIZAR el contenido del Office en la BD de Strapi
+
 // FUNCIÓN PARA: //////// ABRIR modal de Edición ///////////
 /**
  * openModal
@@ -637,7 +787,7 @@ async function login() {
 /**
  * openEditor
  * Abre el editor para modificar contenido.
- * - Si hay un token JWT almacenado, carga el contenido de Hero y About.
+ * - Si hay un token JWT almacenado, carga el contenido de Hero, About, Stats y Office.
  * - Si no hay token, muestra el modal de inicio de sesión.
  */
 async function openEditor() {
@@ -654,6 +804,10 @@ async function openEditor() {
       //console.log("Intentando cargar Stat...");
       await loadStatContent();
       //console.log("Stat cargado exitosamente.");
+
+      //console.log("Intentando cargar Office ...");
+      await loadOfficeContent();
+      //console.log("Office cargado exitosamente.");
 
       openModal("editorModal");
     } catch (error) {
