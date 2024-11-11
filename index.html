@@ -42,6 +42,12 @@
 
     <!-- CSS del Sitemap -->
     <link href="assets/css/map.css" rel="stylesheet" />
+
+    <!-- Importa de Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="index-page">
@@ -93,10 +99,30 @@
               </ul>
             </li>
             <li><a href="#contact">Contacto</a></li>
+            <!-- Ícono de usuario al final del menú con el submenú dentro -->
+            <li id="userIcon" class="nav-item">
+              <i class="bi bi-person-lines-fill" aria-hidden="true"></i>
+              <!-- Submenú -->
+              <div class="submenu">
+                <a href="#" onclick="loginFirst()" class="submenu-item"
+                  ><i class="bi bi-person-check"></i
+                  ><span id="loginStatus" style="color: #124265">
+                    Iniciar Sesión</span
+                  ></a
+                >
+                <a href="#" onclick="logout()" class="submenu-item"
+                  ><i class="bi bi-person-dash"></i> Cerrar Sesión</a
+                >
+                <a href="#" onclick="openEditor()" class="submenu-item"
+                  ><i class="bi bi-pencil-square"></i> Edición</a
+                >
+              </div>
+            </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
+        <!-- Ubicación Widget Google Translate, final del Menú Principal)
         <div
           id="google_translate_element"
           style="
@@ -104,8 +130,21 @@
             padding: 5px;
             border-radius: 10px;
             margin-left: 60px;
+            max-width: 100%;
           "
         ></div>
+
+        <style> <Para el ajuste responsive pero no funciona bien>
+          /* Ajuste de tamaño en pantallas pequeñas */
+          @media (max-width: 600px) {
+            #google_translate_element {
+              width: 90%; /* Ajusta el ancho del contenedor */
+              padding: 3px;
+              font-size: 14px; /* Tamaño de fuente más pequeño */
+              margin: 0 auto; /* Centra el contenedor en la pantalla */
+            }
+          }
+        </style> -->
 
         <script type="text/javascript">
           function googleTranslateElementInit() {
@@ -351,7 +390,7 @@
             for="username"
             class="font-weight-bold text-primary"
             style="font-size: 1rem; display: block"
-            ><i>USUARIO:</i></label
+            ><i>NOMBRE DE USUARIO:</i></label
           >
           <input
             type="text"
@@ -2283,6 +2322,18 @@
                 ><i class="bi bi-linkedin"></i
               ></a>
             </div>
+            <br />
+            <p>Cambio de Idioma del Sitio:</p>
+            <!-- Ubicación Widget Google Translate, final de Contacto de Redes Sociales) -->
+            <div
+              id="google_translate_element"
+              style="
+                border: 1px solid #cccccc;
+                padding: 5px;
+                border-radius: 10px;
+                margin-left: 0px;
+              "
+            ></div>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
@@ -2432,5 +2483,19 @@
       class="scroll-top d-flex align-items-center justify-content-center"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
+
+    <!-- Script para evitar el desplazamiento de la página cuando se abre la selección en el Widget de Google Translator -->
+    <script type="text/javascript">
+      function stopTranslateScroll() {
+        const translateElement = document.getElementById(
+          "google_translate_element"
+        );
+        translateElement.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+      }
+
+      window.onload = stopTranslateScroll;
+    </script>
   </body>
 </html>
