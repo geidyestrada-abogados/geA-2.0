@@ -1645,6 +1645,136 @@ section,
 /* gpt end*/
 
 /*--------------------------------------------------------------
+# Para Seleccionar Imagem en el Editor de Contenido
+--------------------------------------------------------------*/
+
+/* Estilos básicos */
+/*
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #2487ce;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #555;
+}
+*/
+
+/* Contenedor de selección de imágenes */
+#backgroundSelection {
+  display: flex;
+  flex-wrap: nowrap; /* Evita que las miniaturas pasen a la siguiente línea */
+  overflow-x: auto; /* Agrega scroll horizontal si hay muchas miniaturas */
+  gap: 10px; /* Espacio entre miniaturas */
+  padding: 10px;
+  max-width: 100%; /* Ajusta el contenedor al ancho total disponible */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Contenedor del título y descripción */
+#backgroundSelectionTitle {
+  text-align: center; /* Centrar el contenido */
+  margin-bottom: 20px; /* Espacio inferior para separar de otros elementos */
+  padding: 20px;
+  background-color: #f4f4f9; /* Fondo claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo para el título */
+#backgroundSelectionTitle h1 {
+  font-size: 1.8em;
+  color: #2487ce; /* Color azul */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Estilo para la descripción */
+#backgroundSelectionTitle p {
+  font-size: 1.1em;
+  color: #555; /* Color gris oscuro */
+  line-height: 1.6;
+}
+
+/* Estilo de miniaturas */
+.thumbnail {
+  width: 150px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail.selected {
+  border: 2px solid #2487ce;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de Guardar Cambios */
+.save-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #2487ce;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #1b6da1;
+}
+
+/* Mensaje de confirmación */
+.confirmation-message {
+  margin-top: 20px;
+  color: #2487ce;
+  font-weight: bold;
+}
+
+/* Hero: Estilo ampliado para ver la imagen completa */
+#hero-preview {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  background-size: cover; /* Para que la imagen ocupe todo el contenedor */
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/*--------------------------------------------------------------
 # Para Íconos de Login, Logout y Edit como menú flotante
 --------------------------------------------------------------*/
 
@@ -1718,6 +1848,7 @@ section,
   transition: color 0.3s;
   padding: 4px 0 !important; /* Aumenta el espaciado entre elementos */
   line-height: 1.2 !important; /* Aumenta la altura de línea ligeramente */
+  margin-right: 10px;
 }
 
 /* Estilo de los iconos en los elementos del submenú */
@@ -1728,6 +1859,27 @@ section,
 /* Cambia el color a azul al pasar el mouse sobre los elementos del submenú */
 .submenu-item:hover {
   color: #2487ce;
+}
+
+/*--------------------------------------------------------------
+# Para Thumbnails del Editor de Texto
+--------------------------------------------------------------*/
+.thumbnail {
+  width: 100px; /* Ajusta el ancho deseado */
+  height: auto; /* Esto mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen ocupe todo el espacio asignado sin distorsión */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail.selected {
+  border: 2px solid #2487ce;
 }
 
 /*--------------------------------------------------------------
