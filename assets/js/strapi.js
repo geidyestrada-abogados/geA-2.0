@@ -31,6 +31,7 @@ async function fetchHeroContent() {
     const cardcont3 = heroData.CardCont3;
     const cardtitle4 = heroData.CardTitle4;
     const cardcont4 = heroData.CardCont4;
+    const background = heroData.Background;
 
     document.getElementById("hero-title").textContent = title;
     document.getElementById("hero-subtitle").textContent = subtitle;
@@ -42,18 +43,21 @@ async function fetchHeroContent() {
     document.getElementById("hero-cardcont3").textContent = cardcont3;
     document.getElementById("hero-cardtitle4").textContent = cardtitle4;
     document.getElementById("hero-cardcont4").textContent = cardcont4;
+    //document.getElementById("hero-background").textContent = background;
 
-    //console.log("Datos completos de la API:", data); // Log para ver la estructura completa
-    //console.log("Datos de Background:", heroData.Background); // Verificar el campo Background
+    console.log("Datos completos de la API:", data); // Log para ver la estructura completa
+    console.log("Datos de Background OK:", heroData.Background); // Verificar el campo Background
     // Establece la imagen de fondo desde Strapi si existe
-    /*if (heroData.Background && heroData.Background.url) {
+    if (heroData.Background && heroData.Background.url) {
       const backgroundUrl = `http://localhost:1337${heroData.Background.url}`;
-      //console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
-      (document.getElementById(
-        "hero-background"
-      ).style.backgroundImage = `url(${backgroundUrl})`),
-        "important";
-    }*/
+      const baseUrl = "http://localhost:1337"; // Cambia esto si usas otra URL base para Strapi
+      const largeImageUrl = `${baseUrl}${heroData.Background.formats.large.url}`; // Utiliza 'large' o el formato deseado
+
+      console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
+      //(document.getElementById("hero-background").style.backgroundImage = `url(${backgroundUrl})`), "important";
+      //document.getElementById("hero-background").src = largeImageUrl;
+      document.getElementById("hero-background").src = backgroundUrl;
+    }
   } catch (error) {
     console.error("Error al obtener el contenido de Hero:", error);
   }
@@ -71,17 +75,18 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
  */
 async function loadContent() {
   try {
-    const response = await fetch("http://localhost:1337/api/hero");
+    const response = await fetch("http://localhost:1337/api/hero?populate=*");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
     const data = await response.json();
 
-    //console.log("Datos recibidos de la API:", data); // Log para verificar la estructura de los datos
+    console.log("Datos recibidos de la API:", data);
 
-    // Actualizar lógica para manejar la estructura recibida
     if (data && data.data) {
-      const heroData = data.data; // Accede a la sección correcta de los datos
+      const heroData = data.data;
+
+      // Asigna los valores a los elementos correspondientes en el editor
       document.getElementById("edit-title").value = heroData.Titulo || "";
       document.getElementById("edit-subtitle").value = heroData.Subtitulo || "";
       document.getElementById("edit-cardtitle1").value =
@@ -100,8 +105,25 @@ async function loadContent() {
         heroData.CardTitle4 || "";
       document.getElementById("edit-cardcont4").value =
         heroData.CardCont4 || "";
-      /*  document.getElementById("edit-background").value =
-              heroData.Background || "";*/
+
+      // Verificar y establecer la imagen de fondo en la sección hero
+      if (heroData.Background && heroData.Background.length > 0) {
+        const backgroundUrl = heroData.Background[0].url;
+
+        // Completa la URL con el dominio de Strapi si es relativa
+        const fullBackgroundUrl = backgroundUrl.startsWith("http")
+          ? backgroundUrl
+          : `http://localhost:1337${backgroundUrl}`;
+
+        document.getElementById(
+          "hero"
+        ).style.backgroundImage = `url(${fullBackgroundUrl})`;
+        document.getElementById("hero").style.backgroundSize = "cover";
+        document.getElementById("hero").style.backgroundPosition = "center";
+        document.getElementById("hero").style.backgroundRepeat = "no-repeat";
+      } else {
+        console.warn("La imagen de fondo no está disponible en los datos.");
+      }
     } else {
       console.error("Estructura de datos no esperada. Datos completos:", data);
       alert(
@@ -112,7 +134,152 @@ async function loadContent() {
     console.error("Error al cargar el contenido:", error);
     alert("No se pudo cargar el contenido. Por favor, intenta de nuevo.");
   }
-} // FIN de Función para CARGAR CONTENIDO del HERO para Edición
+}
+
+// Inicializar la carga del contenido al cargar la página
+document.addEventListener("DOMContentLoaded", loadContent);
+
+// FIN de Función para CARGAR CONTENIDO del HERO para Edición
+
+// INICIO DE: ///////////////////////////////////////////////////////// FUNCIONES PARA SELECCIONAR IMAGEN DE HERO EN EDITOR //////////////////////////////////////////////////////////////////////////
+let selectedImageUrl = null;
+let selectedImageId = null; // Para almacenar el ID de la imagen seleccionada
+
+// Función para obtener las imágenes de fondo de Hero
+async function fetchHeroBackgrounds() {
+  try {
+    const response = await fetch(
+      "http://localhost:1337/api/hero?populate=Background"
+    );
+    const heroData = await response.json();
+
+    console.log("Datos recibidos de Strapi:", heroData); // Verificar que se reciben los datos
+
+    const backgroundImages = heroData.data.Background;
+    if (backgroundImages && backgroundImages.length > 0) {
+      renderBackgroundImages(backgroundImages);
+    } else {
+      console.log("No hay imágenes disponibles en el campo `Background`");
+    }
+  } catch (error) {
+    console.error("Error al obtener las imágenes de fondo:", error);
+  }
+}
+
+// Función para mostrar miniaturas de las imágenes de fondo
+function renderBackgroundImages(backgroundImages) {
+  const container = document.getElementById("backgroundSelection");
+  container.innerHTML = ""; // Limpiar el contenido anterior
+
+  backgroundImages.forEach((image) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = `http://localhost:1337${image.url}`;
+    imgElement.alt = image.name;
+    imgElement.classList.add("thumbnail");
+
+    imgElement.onclick = () => {
+      document
+        .querySelectorAll(".thumbnail")
+        .forEach((img) => img.classList.remove("selected"));
+      imgElement.classList.add("selected");
+      selectedImageUrl = image.url;
+      selectedImageId = image.id; // Guardar el ID de la imagen seleccionada
+
+      console.log("Imagen seleccionada URL:", selectedImageUrl);
+      console.log("Imagen seleccionada ID:", selectedImageId);
+
+      updateHeroBackground();
+      updateImagePreview();
+    };
+
+    container.appendChild(imgElement);
+  });
+}
+
+// Función para actualizar la vista previa ampliada en el editor
+function updateImagePreview() {
+  const previewElement = document.getElementById("imagePreview");
+  if (previewElement && selectedImageUrl) {
+    previewElement.style.backgroundImage = `url(http://localhost:1337${selectedImageUrl})`;
+    console.log("Vista previa actualizada con:", selectedImageUrl);
+  }
+}
+
+// Función para guardar el fondo de Hero en Strapi
+async function saveBackground() {
+  if (!selectedImageId) {
+    alert("Por favor, selecciona una imagen antes de guardar.");
+    return;
+  }
+
+  try {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("No estás autenticado. Por favor inicia sesión.");
+      return;
+    }
+
+    // Obtiene el arreglo actual `Background` de Strapi
+    const currentResponse = await fetch(
+      "http://localhost:1337/api/hero?populate=Background"
+    );
+    const currentData = await currentResponse.json();
+    const existingBackgroundImages = currentData.data.Background || [];
+
+    // Ordena el arreglo poniendo la imagen seleccionada al inicio
+    const reorderedImages = [
+      { id: selectedImageId },
+      ...existingBackgroundImages
+        .filter((img) => img.id !== selectedImageId)
+        .map((img) => ({ id: img.id })),
+    ];
+
+    // Envía el arreglo completo actualizado a Strapi
+    const response = await fetch("http://localhost:1337/api/hero", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Incluye el token de autenticación
+      },
+      body: JSON.stringify({
+        data: {
+          Background: reorderedImages, // Envía el arreglo completo
+        },
+      }),
+    });
+
+    const responseData = await response.json();
+    console.log("PUT response data:", responseData);
+
+    const updatedResponse = await fetch(
+      "http://localhost:1337/api/hero?populate=Background"
+    );
+    const updatedData = await updatedResponse.json();
+    console.log(
+      "Estado de Background tras actualizar:",
+      updatedData.data.Background
+    );
+
+    document.getElementById("confirmationMessage").style.display = "block";
+    updateHeroBackground(); // Actualiza la imagen en el hero
+  } catch (error) {
+    console.error("Error al guardar el fondo seleccionado:", error);
+  }
+}
+
+// Función para actualizar la imagen de fondo del Hero en tiempo real
+function updateHeroBackground() {
+  const heroElement = document.getElementById("hero");
+  if (heroElement && selectedImageUrl) {
+    heroElement.style.backgroundImage = `url(http://localhost:1337${selectedImageUrl})`;
+    console.log("Actualización en el Hero con:", selectedImageUrl);
+  }
+}
+
+// Ejecutar la carga de imágenes al cargar la página
+fetchHeroBackgrounds();
+
+// FIN DE: ///////////////////////////////////////////////////////// FUNCIONES PARA SELECCIONAR IMAGEN DE HERO EN EDITOR //////////////////////////////////////////////////////////////////////////
 
 // FUNCIÓN PARA:  /////////////////////////////////////////////////////// (3) ACTUALIZAR EL CONTENIDO DEL HERO EN LA BD de Strapi //////////////////////////////////////////////////////////
 /**
@@ -121,6 +288,8 @@ async function loadContent() {
  * - Envía una solicitud HTTP PUT con los nuevos datos.
  * - Requiere un token JWT almacenado en localStorage.
  */
+// Función para cargar y mostrar la primera imagen del arreglo `Background` en Hero
+
 async function updateContent() {
   const token = localStorage.getItem("token");
   const newTitle = document.getElementById("edit-title").value;
@@ -269,6 +438,186 @@ async function loadAboutContent() {
     alert("No se pudo cargar el contenido. Por favor, intenta de nuevo.");
   }
 } // FIN de Función para CARGAR CONTENIDO del ABOUT para Edición
+
+// INICIO DE: ///////////////////////////////////////////////////////// FUNCIONES PARA SELECCIONAR IMAGEN DE HERO EN EDITOR //////////////////////////////////////////////////////////////////////////
+let geidypicImageUrl = null;
+let geidypicImageId = null; // Para almacenar el ID de la imagen seleccionada
+
+// Función para obtener las imágenes de Geidy
+async function fetchAboutGeidypic() {
+  try {
+    const response = await fetch(
+      "http://localhost:1337/api/about?populate=Geidypic"
+    );
+    const aboutData = await response.json();
+    const geidypicImages = aboutData.data.Geidypic;
+
+    console.log("Datos recibidos de Strapi:", aboutData); // Verificar que se reciben los datos
+    console.log("Imágenes recibidas de Strapi:", geidypicImages);
+
+    if (geidypicImages && geidypicImages.length > 0) {
+      // Seleccionar la primera imagen del arreglo
+      const firstImageUrl = `http://localhost:1337${geidypicImages[0].url}`;
+      updateGeidypicImage(firstImageUrl); // Llamar a la función para actualizar la imagen en el DOM
+    } else {
+      console.log("No hay imágenes disponibles en el campo `Geidypic`");
+    }
+  } catch (error) {
+    console.error("Error al obtener las imágenes de Geidypic:", error);
+  }
+}
+
+// Función para obtener y mostrar las imágenes de Geidypic en el editor
+async function fetchAndRenderGeidypicImages() {
+  try {
+    const response = await fetch(
+      "http://localhost:1337/api/about?populate=Geidypic"
+    );
+    const aboutData = await response.json();
+
+    const geidypicImages = aboutData.data.Geidypic;
+
+    console.log("Datos recibidos para el editor de Geidypic:", aboutData);
+
+    if (geidypicImages && geidypicImages.length > 0) {
+      renderGeidypicImages(geidypicImages);
+    } else {
+      console.log("No hay imágenes disponibles en el campo `Geidypic`");
+    }
+  } catch (error) {
+    console.error("Error al obtener las imágenes de Geidypic:", error);
+  }
+}
+
+// Función para mostrar las miniaturas de las imágenes en el editor
+function renderGeidypicImages(geidypicImages) {
+  const container = document.getElementById("geidypicSelection");
+  if (!container) {
+    console.error("Contenedor #geidypicSelection no encontrado en el DOM.");
+    return;
+  }
+
+  container.innerHTML = ""; // Limpiar el contenido anterior
+
+  geidypicImages.forEach((image) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = `http://localhost:1337${image.url}`;
+    imgElement.alt = image.name;
+    imgElement.classList.add("thumbnail");
+
+    imgElement.onclick = () => {
+      document
+        .querySelectorAll(".thumbnail")
+        .forEach((img) => img.classList.remove("selected"));
+      imgElement.classList.add("selected");
+
+      // Guarda la URL e ID de la imagen seleccionada para usarlos en la vista previa o actualización
+      geidypicImageUrl = image.url;
+      geidypicImageId = image.id;
+
+      console.log("Imagen seleccionada para vista previa:", geidypicImageUrl);
+
+      // Actualizar la vista previa en el editor
+      updateGeidypicPreview();
+    };
+
+    container.appendChild(imgElement);
+  });
+}
+
+// Función para actualizar la vista previa de la imagen seleccionada
+function updateGeidypicPreview() {
+  const previewElement = document.getElementById("geidypicPreview");
+  if (previewElement) {
+    previewElement.style.backgroundImage = `url(http://localhost:1337${geidypicImageUrl})`;
+    console.log("Vista previa actualizada con:", geidypicImageUrl);
+  } else {
+    console.error("No se encontró el contenedor de vista previa.");
+  }
+}
+
+// Llama a la función al cargar la página para mostrar las imágenes en el editor
+document.addEventListener("DOMContentLoaded", fetchAndRenderGeidypicImages);
+
+// Función para guardar la imagen de Geidy en Strapi
+async function saveGeidypic() {
+  if (!geidypicImageId) {
+    alert("Por favor, selecciona una imagen antes de guardar.");
+    return;
+  }
+
+  try {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("No estás autenticado. Por favor inicia sesión.");
+      return;
+    }
+
+    // Obtiene el arreglo actual `Geidypic` de Strapi
+    const currentResponse = await fetch(
+      "http://localhost:1337/api/about?populate=Geidypic"
+    );
+    const currentData = await currentResponse.json();
+    const existingGeidypicImages = currentData.data.Geidypic || [];
+
+    // Ordena el arreglo poniendo la imagen seleccionada al inicio
+    const reorderedImages = [
+      { id: geidypicImageId },
+      ...existingGeidypicImages
+        .filter((img) => img.id !== geidypicImageId)
+        .map((img) => ({ id: img.id })),
+    ];
+
+    // Envía el arreglo completo actualizado a Strapi
+    const response = await fetch("http://localhost:1337/api/about", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Incluye el token de autenticación
+      },
+      body: JSON.stringify({
+        data: {
+          Geidypic: reorderedImages, // Envía el arreglo completo
+        },
+      }),
+    });
+
+    const responseData = await response.json();
+    console.log("PUT response data:", responseData);
+
+    const updatedResponse = await fetch(
+      "http://localhost:1337/api/about?populate=Geidypic"
+    );
+    const updatedData = await updatedResponse.json();
+    console.log(
+      "Estado de Geidypic tras actualizar:",
+      updatedData.data.Geidypic
+    );
+
+    document.getElementById("confirmationMessage").style.display = "block";
+    updateGeidypicBackground(); // Actualiza la imagen en el hero
+  } catch (error) {
+    console.error("Error al guardar el fondo seleccionado:", error);
+  }
+}
+
+// Función para actualizar la imagen de fondo del Hero en tiempo real
+// Función para actualizar la imagen en el DOM
+function updateGeidypicImage(imageUrl) {
+  const imageElement = document.getElementById("geidypicImage");
+  if (imageElement) {
+    imageElement.src = imageUrl;
+    console.log("Imagen de Geidypic actualizada con URL:", imageUrl);
+  } else {
+    console.warn("Elemento de imagen no encontrado.");
+  }
+}
+
+// Ejecutar la carga de imágenes al cargar la página
+// Llama a la función al cargar la página
+document.addEventListener("DOMContentLoaded", fetchAboutGeidypic);
+
+// FIN DE: ///////////////////////////////////////////////////////// FUNCIONES PARA SELECCIONAR IMAGEN DE HERO EN EDITOR //////////////////////////////////////////////////////////////////////////
 
 // FUNCIÓN PARA: ////////////////////////// //////////////////////////// (3) ACTUALIZAR EL CONTENIDO DEL ABOUT EN LA BD de Strapi //////////////////////////////////////////////////////////////
 /**
