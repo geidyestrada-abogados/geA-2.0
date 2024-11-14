@@ -115,6 +115,8 @@ async function loadContent() {
           ? backgroundUrl
           : `https://strapi-ge-production.up.railway.app${backgroundUrl}`;
 
+        console.log("BackgroundURL From GitHub:", fullBackgroundUrl);
+
         document.getElementById(
           "hero"
         ).style.backgroundImage = `url(${fullBackgroundUrl})`;
