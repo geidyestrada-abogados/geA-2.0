@@ -444,14 +444,16 @@
           >&times;</span
         >
         <h2
-          class="mb-4 text-center text-primary"
-          style="font-weight: bold; font-size: 1.8rem"
+          class="mb-4 text-center"
+          style="color: #2487ce; font-weight: bold; font-size: 1.8rem"
         >
+          <br />
           EDITOR DE CONTENIDO POR SECCIONES
         </h2>
         <h2
-          class="mb-4 text-center text-primary"
+          class="mb-4 text-center"
           style="
+            color: #2487ce;
             font-size: 1.5rem;
             font-weight: bold;
             background-color: #f0f0f0;
@@ -470,8 +472,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-title"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -489,8 +491,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-subtitle"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -508,8 +510,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardtitle1"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -527,8 +529,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardcont1"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -546,8 +548,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardtitle2"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -565,8 +567,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardcont2"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -587,8 +589,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardtitle3"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -606,8 +608,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardcont3"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -625,8 +627,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardtitle4"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -644,8 +646,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-cardcont4"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -661,8 +663,59 @@
               ></textarea>
               <br />
             </div>
+
+            <!-- PARA SELECCIONAR IMAGEN DE FONDO DEL HERO -->
+            <div class="col-md-12">
+              <h6
+                style="
+                  color: #2487ce;
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                SELECCIONA LA IMAGEN DE FONDO DE INICIO:
+              </h6>
+            </div>
+            <!-- Contenedor para las imágenes de fondo -->
+            <div id="backgroundSelection">
+              <!-- Las imágenes se cargarán aquí desde JavaScript -->
+            </div>
+
+            <!-- Contenedor para la vista previa ampliada -->
+            <div id="previewContainer">
+              <div
+                id="imagePreview"
+                style="
+                  width: 100%;
+                  max-width: 1200px;
+                  height: 400px;
+                  background-size: cover; /* Para que la imagen ocupe todo el contenedor */
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  margin-top: 30px;
+                  border: 2px solid #ddd;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 24px;
+                  color: white;
+                  font-weight: bold;
+                  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+                "
+              >
+                Vista Previa de la Imagen Seleccionada
+                <!-- La imagen seleccionada se mostrará aquí -->
+              </div>
+              <br />
+              <br />
+            </div>
+            <!-- Fin de: PARA SELECCIONAR IMAGEN DE FONDO DEL HERO -->
+
             <button
-              onclick="updateContent()"
+              onclick="updateContent(); saveBackground();"
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
@@ -676,8 +729,9 @@
         <!-- Sección ACERCA -->
         <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
         <h2
-          class="mb-4 text-center text-primary"
+          class="mb-4 text-center"
           style="
+            color: #2487ce;
             font-size: 1.5rem;
             font-weight: bold;
             background-color: #f0f0f0;
@@ -694,8 +748,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-title-about"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -715,8 +769,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-intro"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -736,8 +790,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-compromise"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -757,8 +811,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-mision"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -778,8 +832,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-vision"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -799,8 +853,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-values"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -822,8 +876,8 @@
             <div class="col-md-4">
               <h6
                 for="edit-why-choose-us"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -839,8 +893,30 @@
               ></textarea>
               <br />
             </div>
+
+            <!-- PARA SELECCIONAR IMAGEN DE GEIDY -->
+            <div class="col-md-12">
+              <h6
+                style="
+                  color: #2487ce;
+                  font-weight: bold;
+                  background-color: #f0f0f0;
+                  padding: 5px 10px;
+                  border-radius: 5px;
+                "
+              >
+                SELECCIONA LA IMAGEN DEL ACERCA
+              </h6>
+            </div>
+            <!-- Contenedor para las imágenes de Geidy -->
+            <div id="geidypicSelection" class="geidypic-container">
+              <!-- Las imágenes se cargarán aquí desde JavaScript -->
+            </div>
+            <div><br /></div>
+            <!-- Fin de: PARA SELECCIONAR IMAGEN DE GEIDY -->
+
             <button
-              onclick="updateAboutContent()"
+              onclick="updateAboutContent(); saveGeidypic();"
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
@@ -853,8 +929,9 @@
         <!-- Sección STATS -->
         <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
         <h2
-          class="mb-4 text-center text-primary"
+          class="mb-4 text-center"
           style="
+            color: #2487ce;
             font-size: 1.5rem;
             font-weight: bold;
             background-color: #f0f0f0;
@@ -871,8 +948,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat1"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -892,8 +969,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat1n"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -914,8 +991,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat2"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -935,8 +1012,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat2n"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -957,8 +1034,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat3"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -978,8 +1055,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat3n"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1000,8 +1077,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat4"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1021,8 +1098,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-stat4n"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1052,8 +1129,9 @@
         <!-- Sección OFFICE -->
         <hr style="border: 1px solid #ccc; margin-bottom: 1rem" />
         <h2
-          class="mb-4 text-center text-primary"
+          class="mb-4 text-center"
           style="
+            color: #2487ce;
             font-size: 1.5rem;
             font-weight: bold;
             background-color: #f0f0f0;
@@ -1070,8 +1148,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-title-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1091,8 +1169,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-intro-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1112,8 +1190,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-item1-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1133,8 +1211,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-item2-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1154,8 +1232,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-item3-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1175,8 +1253,8 @@
             <div class="col-md-2">
               <h6
                 for="edit-item4-office"
-                class="text-dark"
                 style="
+                  color: #2487ce;
                   font-weight: bold;
                   background-color: #f0f0f0;
                   padding: 5px 10px;
@@ -1215,13 +1293,6 @@
     <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section">
-        <img
-          src="assets/img/hero-bg-office.jpg"
-          alt=""
-          data-aos="fade-in"
-          class=""
-        />
-
         <div class="container">
           <!-- Strapi container para Hero -->
           <div id="hero-section">
@@ -1300,7 +1371,8 @@
         <div class="container section-title" data-aos="fade-up">
           <!-- Agregar la imagen circular -->
           <div class="hero-image-container">
-            <img src="assets/img/geidy1.png" alt="Abogada" class="hero-image" />
+            <!-- <img src="assets/img/geidy1.png" alt="Abogada" class="hero-image" /> -->
+            <img id="geidypicImage" src="" alt="Abogada" class="hero-image" />
           </div>
           <br /><br />
           <h2 id="about-title"></h2>
@@ -2576,6 +2648,9 @@
 
     <!-- Strapi -->
     <script src="assets/js/strapi.js"></script>
+
+    <!-- Hero-BG -->
+    <!-- <script src="assets/js/hero-bg.js"></script> -->
 
     <style>
       .whatsapp-button {
