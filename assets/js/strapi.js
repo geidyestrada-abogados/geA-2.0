@@ -5,7 +5,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLhero = "https://strapi-ge-production.up.railway.app/api/hero";
+const apiURLhero = "https://gea-strapi.up.railway.app/api/hero";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL HERO ///////////////////////////////////////////////////////////////////////
 /**
@@ -49,8 +49,8 @@ async function fetchHeroContent() {
     console.log("Datos de Background OK:", heroData.Background); // Verificar el campo Background
     // Establece la imagen de fondo desde Strapi si existe
     if (heroData.Background && heroData.Background.url) {
-      const backgroundUrl = `https://strapi-ge-production.up.railway.app${heroData.Background.url}`;
-      const baseUrl = "https://strapi-ge-production.up.railway.app"; // Cambia esto si usas otra URL base para Strapi
+      const backgroundUrl = `https://gea-strapi.up.railway.app${heroData.Background.url}`;
+      const baseUrl = "https://gea-strapi.up.railway.app"; // Cambia esto si usas otra URL base para Strapi
       const largeImageUrl = `${baseUrl}${heroData.Background.formats.large.url}`; // Utiliza 'large' o el formato deseado
 
       console.log("URL de fondo desde Strapi:", backgroundUrl); // Verifica que esta URL sea correcta
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", fetchHeroContent);
  */
 async function loadContent() {
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero?populate=*");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/hero?populate=*");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -113,7 +113,7 @@ async function loadContent() {
         // Completa la URL con el dominio de Strapi si es relativa
         const fullBackgroundUrl = backgroundUrl.startsWith("http")
           ? backgroundUrl
-          : `https://strapi-ge-production.up.railway.app${backgroundUrl}`;
+          : `https://gea-strapi.up.railway.app${backgroundUrl}`;
 
         console.log("BackgroundURL From GitHub:", fullBackgroundUrl);
 
@@ -151,7 +151,7 @@ let selectedImageId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchHeroBackgrounds() {
   try {
     const response = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/hero?populate=Background"
+      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
     );
     const heroData = await response.json();
 
@@ -175,7 +175,7 @@ function renderBackgroundImages(backgroundImages) {
 
   backgroundImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `https://strapi-ge-production.up.railway.app${image.url}`;
+    imgElement.src = `https://gea-strapi.up.railway.app${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -202,7 +202,7 @@ function renderBackgroundImages(backgroundImages) {
 function updateImagePreview() {
   const previewElement = document.getElementById("imagePreview");
   if (previewElement && selectedImageUrl) {
-    previewElement.style.backgroundImage = `url(https://strapi-ge-production.up.railway.app${selectedImageUrl})`;
+    previewElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedImageUrl})`;
     console.log("Vista previa actualizada con:", selectedImageUrl);
   }
 }
@@ -223,7 +223,7 @@ async function saveBackground() {
 
     // Obtiene el arreglo actual `Background` de Strapi
     const currentResponse = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/hero?populate=Background"
+      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
     );
     const currentData = await currentResponse.json();
     const existingBackgroundImages = currentData.data.Background || [];
@@ -237,7 +237,7 @@ async function saveBackground() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -254,7 +254,7 @@ async function saveBackground() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/hero?populate=Background"
+      "https://gea-strapi.up.railway.app/api/hero?populate=Background"
     );
     const updatedData = await updatedResponse.json();
     console.log(
@@ -273,7 +273,7 @@ async function saveBackground() {
 function updateHeroBackground() {
   const heroElement = document.getElementById("hero");
   if (heroElement && selectedImageUrl) {
-    heroElement.style.backgroundImage = `url(https://strapi-ge-production.up.railway.app${selectedImageUrl})`;
+    heroElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedImageUrl})`;
     console.log("Actualización en el Hero con:", selectedImageUrl);
   }
 }
@@ -306,7 +306,7 @@ async function updateContent() {
   const newCardCont4 = document.getElementById("edit-cardcont4").value;
 
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/hero", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/hero", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -343,7 +343,7 @@ async function updateContent() {
 
 // <!-- Funciones para trabajar con el About desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLabout = "https://strapi-ge-production.up.railway.app/api/about";
+const apiURLabout = "https://gea-strapi.up.railway.app/api/about";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL ABOUT /////////////////////////////////////////////////////////////////////
 /**
@@ -400,7 +400,7 @@ document.addEventListener("DOMContentLoaded", fetchAboutContent);
 async function loadAboutContent() {
   //console.log("Iniciando carga del About...");
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/about");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del About: " + response.status
@@ -449,7 +449,7 @@ let geidypicImageId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchAboutGeidypic() {
   try {
     const response = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/about?populate=Geidypic"
+      "https://gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const aboutData = await response.json();
     const geidypicImages = aboutData.data.Geidypic;
@@ -459,7 +459,7 @@ async function fetchAboutGeidypic() {
 
     if (geidypicImages && geidypicImages.length > 0) {
       // Seleccionar la primera imagen del arreglo
-      const firstImageUrl = `https://strapi-ge-production.up.railway.app${geidypicImages[0].url}`;
+      const firstImageUrl = `https://gea-strapi.up.railway.app${geidypicImages[0].url}`;
       updateGeidypicImage(firstImageUrl); // Llamar a la función para actualizar la imagen en el DOM
     } else {
       console.log("No hay imágenes disponibles en el campo `Geidypic`");
@@ -473,7 +473,7 @@ async function fetchAboutGeidypic() {
 async function fetchAndRenderGeidypicImages() {
   try {
     const response = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/about?populate=Geidypic"
+      "https://gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const aboutData = await response.json();
 
@@ -503,7 +503,7 @@ function renderGeidypicImages(geidypicImages) {
 
   geidypicImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `https://strapi-ge-production.up.railway.app${image.url}`;
+    imgElement.src = `https://gea-strapi.up.railway.app${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -531,7 +531,7 @@ function renderGeidypicImages(geidypicImages) {
 function updateGeidypicPreview() {
   const previewElement = document.getElementById("geidypicPreview");
   if (previewElement) {
-    previewElement.style.backgroundImage = `url(https://strapi-ge-production.up.railway.app${geidypicImageUrl})`;
+    previewElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${geidypicImageUrl})`;
     console.log("Vista previa actualizada con:", geidypicImageUrl);
   } else {
     console.error("No se encontró el contenedor de vista previa.");
@@ -557,7 +557,7 @@ async function saveGeidypic() {
 
     // Obtiene el arreglo actual `Geidypic` de Strapi
     const currentResponse = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/about?populate=Geidypic"
+      "https://gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const currentData = await currentResponse.json();
     const existingGeidypicImages = currentData.data.Geidypic || [];
@@ -571,7 +571,7 @@ async function saveGeidypic() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -588,7 +588,7 @@ async function saveGeidypic() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "https://strapi-ge-production.up.railway.app/api/about?populate=Geidypic"
+      "https://gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const updatedData = await updatedResponse.json();
     console.log(
@@ -640,7 +640,7 @@ async function updateAboutContent() {
   const newFinal = document.getElementById("edit-final").value;
 
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/about", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -674,7 +674,7 @@ async function updateAboutContent() {
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLstat = "https://strapi-ge-production.up.railway.app/api/stat";
+const apiURLstat = "https://gea-strapi.up.railway.app/api/stat";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL STAT ///////////////////////////////////////////////////////////////////////
 /**
@@ -773,7 +773,7 @@ document.addEventListener("DOMContentLoaded", fetchStatContent);
  */
 async function loadStatContent() {
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/stat");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -877,7 +877,7 @@ async function updateStatContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/stat", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/stat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -912,7 +912,7 @@ async function updateStatContent() {
 
 // <!-- Funciones para trabajar con el Office desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLoffice = "https://strapi-ge-production.up.railway.app/api/office";
+const apiURLoffice = "https://gea-strapi.up.railway.app/api/office";
 
 // FUNCIÓN PARA: ////////////////////////////////////////////////// (1) OBTENER Y MOSTRAR DATOS DEL OFFICE /////////////////////////////////////////////////////////////////////
 /**
@@ -967,7 +967,7 @@ document.addEventListener("DOMContentLoaded", fetchOfficeContent);
 async function loadOfficeContent() {
   //console.log("Iniciando carga del Office ...");
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/office");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/office");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del Office: " + response.status
@@ -1029,7 +1029,7 @@ async function updateOfficeContent() {
   const newItem4 = document.getElementById("edit-item4-office").value;
 
   try {
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/office", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/office", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -1099,7 +1099,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("https://strapi-ge-production.up.railway.app/api/auth/local", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
