@@ -1186,10 +1186,10 @@
               ></textarea>
             </div>
 
-            <!-- Copromiso -->
+            <!-- Item1 -->
             <div class="col-md-2">
               <h6
-                for="edit-item1-office"
+                for="edit-item1"
                 style="
                   color: #2487ce;
                   font-weight: bold;
@@ -1201,16 +1201,16 @@
                 ARTÍCULO #1:
               </h6>
               <textarea
-                id="edit-item1-office"
+                id="edit-item1"
                 class="form-control"
                 rows="4"
               ></textarea>
             </div>
 
-            <!-- Misión -->
+            <!-- Item2 -->
             <div class="col-md-2">
               <h6
-                for="edit-item2-office"
+                for="edit-item2"
                 style="
                   color: #2487ce;
                   font-weight: bold;
@@ -1222,16 +1222,16 @@
                 ARTÍCULO #2:
               </h6>
               <textarea
-                id="edit-item2-office"
+                id="edit-item2"
                 class="form-control"
                 rows="4"
               ></textarea>
             </div>
 
-            <!-- Visión -->
+            <!-- Item3 -->
             <div class="col-md-2">
               <h6
-                for="edit-item3-office"
+                for="edit-item3"
                 style="
                   color: #2487ce;
                   font-weight: bold;
@@ -1243,16 +1243,16 @@
                 ARTÍCULO #3:
               </h6>
               <textarea
-                id="edit-item3-office"
+                id="edit-item3"
                 class="form-control"
                 rows="4"
               ></textarea>
             </div>
 
-            <!-- Valores -->
+            <!-- Item4 -->
             <div class="col-md-2">
               <h6
-                for="edit-item4-office"
+                for="edit-item4"
                 style="
                   color: #2487ce;
                   font-weight: bold;
@@ -1264,16 +1264,66 @@
                 ARTÍCULO #4:
               </h6>
               <textarea
-                id="edit-item4-office"
+                id="edit-item4"
                 class="form-control"
                 rows="4"
               ></textarea>
             </div>
           </div>
 
+          <!-- PARA SELECCIONAR IMAGEN DE FONDO DE LA OFICINA -->
+          <div class="col-md-12">
+            <h6
+              style="
+                color: #2487ce;
+                font-weight: bold;
+                background-color: #f0f0f0;
+                padding: 5px 10px;
+                border-radius: 5px;
+              "
+            >
+              SELECCIONA LA IMAGEN DE LA OFICIA:
+            </h6>
+          </div>
+          <!-- Contenedor para las imágenes de fondo -->
+          <div id="officeSelection">
+            <!-- Las imágenes se cargarán aquí desde JavaScript -->
+          </div>
+
+          <!-- Contenedor para la vista previa ampliada -->
+          <div id="previewContainer">
+            <div
+              id="officePreview"
+              style="
+                width: 100%;
+                max-width: 1200px;
+                height: 400px;
+                background-size: cover; /* Para que la imagen ocupe todo el contenedor */
+                background-position: center;
+                background-repeat: no-repeat;
+                margin-top: 30px;
+                border: 2px solid #ddd;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                color: white;
+                font-weight: bold;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+              "
+            >
+              Vista Previa de la Imagen Seleccionada
+              <!-- La imagen seleccionada se mostrará aquí -->
+            </div>
+            <br />
+            <br />
+          </div>
+          <!-- Fin de: PARA SELECCIONAR IMAGEN DE LA OFICINA -->
+
           <div class="row mb-3">
             <button
-              onclick="updateOfficeContent()"
+              onclick="updateOfficeContent(); saveOffice();"
               class="btn btn-outline-primary btn-lg"
               style="font-family: 'Verdana', sans-serif"
             >
@@ -1486,16 +1536,20 @@
       <section id="office" class="about-alt section">
         <div class="container">
           <div class="row gy-4">
+            <div></div>
             <div
               class="col-lg-6 position-relative align-self-start"
               data-aos="fade-up"
               data-aos-delay="100"
+              style="height: 560px"
             >
+              <!-- Imagen de Oficina Fija
               <img
                 src="assets/img/oficina.jpg"
                 class="img-fluid img-bordered-shadow"
                 alt=""
               />
+              -->
               <a
                 href="https://www.google.com/maps?q=Avenida+Principado+de+Andorra+7+Bajos,+Tarragona&output=embed"
                 class="glightbox pulsating-play-btn"
@@ -1506,24 +1560,24 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <h3 id="title-office"></h3>
-              <p id="intro-office" class="fst-italic"></p>
+              <h3 id="office-title"></h3>
+              <p id="office-intro" class="fst-italic"></p>
               <ul>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span id="item1-office"></span>
+                  <span id="office-item1"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span id="item2-office"></span>
+                  <span id="office-item2"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span id="item3-office"></span>
+                  <span id="office-item3"></span>
                 </li>
                 <li>
                   <i class="bi bi-check2-all"></i>
-                  <span id="item4-office"></span>
+                  <span id="office-item4"></span>
                 </li>
               </ul>
             </div>
@@ -1588,7 +1642,7 @@
                     >Gracias al despacho pude regularizar mi situación en el
                     país. Su equipo me guió durante todo el proceso, y ahora
                     tengo mi residencia legal. ¡Un servicio profesional y
-                    eficiente!”</span
+                    eficiente!</span
                   >
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
@@ -1608,10 +1662,10 @@
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
                   <span
-                    >“Fueron mi mayor apoyo durante mi proceso de divorcio. Me
+                    >Fueron mi mayor apoyo durante mi proceso de divorcio. Me
                     ayudaron a asegurar la custodia compartida de mis hijos y lo
                     hicieron de una manera humana y comprensiva. Eternamente
-                    agradecida.”</span
+                    agradecida.</span
                   >
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
@@ -1631,10 +1685,10 @@
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
                   <span
-                    >“Me despidieron injustamente y gracias a este despacho pude
+                    >Me despidieron injustamente y gracias a este despacho pude
                     obtener la indemnización que merecía. Siempre estuvieron a
                     mi lado, respondiendo a mis preguntas y dándome confianza en
-                    cada paso.”</span
+                    cada paso.</span
                   >
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
@@ -1654,10 +1708,10 @@
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
                   <span
-                    >“Me acompañaron durante todo el proceso de obtención de mi
+                    >Me acompañaron durante todo el proceso de obtención de mi
                     nacionalidad. Siempre atentos, explicándome cada paso y
                     manteniéndome informado. ¡No habría podido hacerlo sin su
-                    ayuda!”</span
+                    ayuda!</span
                   >
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
@@ -1677,10 +1731,10 @@
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
                   <span
-                    >“Me defendieron en un caso penal complicado y no solo
+                    >Me defendieron en un caso penal complicado y no solo
                     lograron una reducción significativa de la condena, sino que
                     siempre me trataron con respeto y profesionalismo. ¡No
-                    podría haber estado en mejores manos!”</span
+                    podría haber estado en mejores manos!</span
                   >
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
@@ -2646,6 +2700,13 @@
     <!-- Mapsite y Otros Modales-->
     <script src="assets/js/map.js"></script>
 
+    <!-- Strapi -->
+    <script src="assets/js/strapi-01-hero.js"></script>
+    <script src="assets/js/strapi-02-about.js"></script>
+    <script src="assets/js/strapi-03-stats.js"></script>
+    <script src="assets/js/strapi-04-office.js"></script>
+    <script src="assets/js/strapi-auth+edit.js"></script>
+
     <!-- Hero-BG -->
     <!-- <script src="assets/js/hero-bg.js"></script> -->
 
@@ -2701,8 +2762,5 @@
 
       window.onload = stopTranslateScroll;
     </script>
-
-    <!-- Strapi -->
-    <script src="assets/js/strapi.js"></script>
   </body>
 </html>
