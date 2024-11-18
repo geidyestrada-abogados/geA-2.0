@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el About desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLabout = "http://localhost:1337/api/about";
+const apiURLabout = "gea-strapi.up.railway.app/api/about";
 
 //? ================================================================================================
 //? (1) OBTENER Y MOSTRAR DATOS DEL ABOUT
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", fetchAboutContent);
 async function loadAboutContent() {
   //console.log("Iniciando carga del About...");
   try {
-    const response = await fetch("http://localhost:1337/api/about");
+    const response = await fetch("gea-strapi.up.railway.app/api/about");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del About: " + response.status
@@ -127,7 +127,7 @@ let geidypicImageId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchAboutGeidypic() {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/about?populate=Geidypic"
+      "gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const aboutData = await response.json();
     const geidypicImages = aboutData.data.Geidypic;
@@ -137,7 +137,7 @@ async function fetchAboutGeidypic() {
 
     if (geidypicImages && geidypicImages.length > 0) {
       // Seleccionar la primera imagen del arreglo
-      const firstImageUrl = `http://localhost:1337${geidypicImages[0].url}`;
+      const firstImageUrl = `gea-strapi.up.railway.app${geidypicImages[0].url}`;
       updateGeidypicImage(firstImageUrl); // Llamar a la función para actualizar la imagen en el DOM
     } else {
       console.log("No hay imágenes disponibles en el campo `Geidypic`");
@@ -151,7 +151,7 @@ async function fetchAboutGeidypic() {
 async function fetchAndRenderGeidypicImages() {
   try {
     const response = await fetch(
-      "http://localhost:1337/api/about?populate=Geidypic"
+      "gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const aboutData = await response.json();
 
@@ -181,7 +181,7 @@ function renderGeidypicImages(geidypicImages) {
 
   geidypicImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `http://localhost:1337${image.url}`;
+    imgElement.src = `gea-strapi.up.railway.app${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -209,7 +209,7 @@ function renderGeidypicImages(geidypicImages) {
 function updateGeidypicPreview() {
   const previewElement = document.getElementById("geidypicPreview");
   if (previewElement) {
-    previewElement.style.backgroundImage = `url(http://localhost:1337${geidypicImageUrl})`;
+    previewElement.style.backgroundImage = `url(gea-strapi.up.railway.app${geidypicImageUrl})`;
     console.log("Vista previa actualizada con:", geidypicImageUrl);
   } else {
     console.error("No se encontró el contenedor de vista previa.");
@@ -235,7 +235,7 @@ async function saveGeidypic() {
 
     // Obtiene el arreglo actual `Geidypic` de Strapi
     const currentResponse = await fetch(
-      "http://localhost:1337/api/about?populate=Geidypic"
+      "gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const currentData = await currentResponse.json();
     const existingGeidypicImages = currentData.data.Geidypic || [];
@@ -249,7 +249,7 @@ async function saveGeidypic() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("http://localhost:1337/api/about", {
+    const response = await fetch("gea-strapi.up.railway.app/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -266,7 +266,7 @@ async function saveGeidypic() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "http://localhost:1337/api/about?populate=Geidypic"
+      "gea-strapi.up.railway.app/api/about?populate=Geidypic"
     );
     const updatedData = await updatedResponse.json();
     console.log(
@@ -323,7 +323,7 @@ async function updateAboutContent() {
   const newFinal = document.getElementById("edit-final").value;
 
   try {
-    const response = await fetch("http://localhost:1337/api/about", {
+    const response = await fetch("gea-strapi.up.railway.app/api/about", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
