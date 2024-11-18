@@ -1883,6 +1883,34 @@ p {
 }
 
 /*--------------------------------------------------------------
+# Para cambiar texto sobre la imagen de la oficina
+--------------------------------------------------------------*/
+
+.col-lg-6.content {
+  color: white; /* Texto blanco */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido opcional */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.col-lg-6.content i {
+  color: white; /* Íconos en blanco */
+}
+
+#office-title {
+  color: white !important; /* Sobrescribe cualquier estilo previo */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Mejora la visibilidad */
+}
+
+/* Asegúrate de tener una clase o identificador único */
+.col-lg-6.position-relative {
+  background-size: 20% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/*--------------------------------------------------------------
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
