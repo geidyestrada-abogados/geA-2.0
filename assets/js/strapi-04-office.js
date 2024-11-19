@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar con el Office desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLoffice = "gea-strapi.up.railway.app/api/office";
+const apiURLoffice = "https://gea-strapi.up.railway.app/api/office";
 
 //TODO =========================================================================================
 //TODO (1) OBTENER Y MOSTRAR DATOS DE OFFICE
@@ -47,8 +47,8 @@ async function fetchOfficeContent() {
 
     // Establece la imagen de la oficina desde Strapi si existe
     if (officeData.Office && officeData.Office.url) {
-      const officeUrl = `gea-strapi.up.railway.app${officeData.Office.url}`;
-      const baseUrl = "gea-strapi.up.railway.app"; // Cambia esto si usas otra URL base para Strapi
+      const officeUrl = `https://gea-strapi.up.railway.app${officeData.Office.url}`;
+      const baseUrl = "https://gea-strapi.up.railway.app"; // Cambia esto si usas otra URL base para Strapi
       const largeImageUrl = `${baseUrl}${officeData.Office.formats.large.url}`; // Utiliza 'large' o el formato deseado
 
       console.log("URL de fondo desde Strapi:", officeUrl); // Verifica que esta URL sea correcta
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", fetchOfficeContent);
 //TODO -- INICIO FUNCIÓN -- loadOfficeContent() (Cargar contenido de OFFICE en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadOfficeContent() {
   try {
-    const response = await fetch("gea-strapi.up.railway.app/api/office?populate=*");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/office?populate=*");
     if (!response.ok) {
       throw new Error(
         "Error al obtener el contenido del Office: " + response.status
@@ -106,7 +106,7 @@ async function loadOfficeContent() {
         // Completa la URL con el dominio de Strapi si es relativa
         const fullOfficeUrl = officeUrl.startsWith("http")
           ? officeUrl
-          : `gea-strapi.up.railway.app${officeUrl}`;
+          : `https://gea-strapi.up.railway.app${officeUrl}`;
 
         document.getElementById(
           "office"
@@ -145,7 +145,7 @@ let selectedOfficeId = null; // Para almacenar el ID de la imagen seleccionada
 async function fetchOfficeBackgrounds() {
   try {
     const response = await fetch(
-      "gea-strapi.up.railway.app/api/office?populate=Office"
+      "https://gea-strapi.up.railway.app/api/office?populate=Office"
     );
     const officeData = await response.json();
 
@@ -169,7 +169,7 @@ function renderOfficeImages(officeImages) {
 
   officeImages.forEach((image) => {
     const imgElement = document.createElement("img");
-    imgElement.src = `gea-strapi.up.railway.app${image.url}`;
+    imgElement.src = `https://gea-strapi.up.railway.app${image.url}`;
     imgElement.alt = image.name;
     imgElement.classList.add("thumbnail");
 
@@ -196,7 +196,7 @@ function renderOfficeImages(officeImages) {
 function updateOfficePreview() {
   const previewElement = document.getElementById("officePreview");
   if (previewElement && selectedOfficeUrl) {
-    previewElement.style.backgroundImage = `url(gea-strapi.up.railway.app${selectedOfficeUrl})`;
+    previewElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedOfficeUrl})`;
     console.log("Vista previa actualizada con:", selectedOfficeUrl);
   }
 }
@@ -217,7 +217,7 @@ async function saveOffice() {
 
     // Obtiene el arreglo actual `Office` de Strapi
     const currentResponse = await fetch(
-      "gea-strapi.up.railway.app/api/office?populate=Office"
+      "https://gea-strapi.up.railway.app/api/office?populate=Office"
     );
     const currentData = await currentResponse.json();
     const existingOfficeImages = currentData.data.Office || [];
@@ -231,7 +231,7 @@ async function saveOffice() {
     ];
 
     // Envía el arreglo completo actualizado a Strapi
-    const response = await fetch("gea-strapi.up.railway.app/api/office", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/office", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -248,7 +248,7 @@ async function saveOffice() {
     console.log("PUT response data:", responseData);
 
     const updatedResponse = await fetch(
-      "gea-strapi.up.railway.app/api/office?populate=Office"
+      "https://gea-strapi.up.railway.app/api/office?populate=Office"
     );
     const updatedData = await updatedResponse.json();
     console.log("Estado de Office tras actualizar:", updatedData.data.Office);
@@ -264,7 +264,7 @@ async function saveOffice() {
 function updateOfficeBackground() {
   const officeElement = document.getElementById("office");
   if (officeElement && selectedOfficeUrl) {
-    officeElement.style.backgroundImage = `url(gea-strapi.up.railway.app${selectedOfficeUrl})`;
+    officeElement.style.backgroundImage = `url(https://gea-strapi.up.railway.app${selectedOfficeUrl})`;
     console.log("Actualización en el Office con:", selectedOfficeUrl);
   }
 }
@@ -297,7 +297,7 @@ async function updateOfficeContent() {
   const newItem4 = document.getElementById("edit-item4").value;
 
   try {
-    const response = await fetch("gea-strapi.up.railway.app/api/office", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/office", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
