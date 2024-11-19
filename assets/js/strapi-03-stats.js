@@ -6,7 +6,7 @@
 
 // <!-- Funciones para trabajar com el HERO desde la API de Strapi-->
 // URL de la API de Strapi
-const apiURLstat = "gea-strapi.up.railway.app/api/stat";
+const apiURLstat = "https://gea-strapi.up.railway.app/api/stat";
 
 //* =========================================================================================
 //* (1) OBTENER Y MOSTRAR DATOS DE STATS
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", fetchStatContent);
 //* -- INICIO FUNCIÓN -- loadContent() (Cargar contenido de Stats en el Editor) ///////////////////////////////////////////////////////////////////////////////////////////////
 async function loadStatContent() {
   try {
-    const response = await fetch("gea-strapi.up.railway.app/api/stat");
+    const response = await fetch("https://gea-strapi.up.railway.app/api/stat");
     if (!response.ok) {
       throw new Error("Error al obtener el contenido: " + response.status);
     }
@@ -228,7 +228,7 @@ async function updateStatContent() {
 
   try {
     // Usar la URL correcta para Single Type
-    const response = await fetch("gea-strapi.up.railway.app/api/stat", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/stat", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
