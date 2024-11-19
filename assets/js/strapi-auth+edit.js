@@ -45,7 +45,7 @@ async function login() {
 
   try {
     // Utilizando la URL correcta para la autenticación
-    const response = await fetch("https://strapi-ge.railway.internal/api/auth/local", {
+    const response = await fetch("https://gea-strapi.up.railway.app/api/auth/local", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier: username, password: password }),
